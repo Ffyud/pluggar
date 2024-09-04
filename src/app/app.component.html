@@ -1,11 +1,10 @@
 <main class="main">
   <div class="content">
-    <app-card-stacks></app-card-stacks>
-      <app-card [cardInput]="currentCard"/>
+    <app-card-stacks [cards]="cardListAnswered"></app-card-stacks>
+    <app-card [card]="currentCard" />
 
-    <app-card-reply/>
-</div>
+    <app-card-reply (replyEvent)="handleReply($event)" />
+  </div>
 </main>
-
 
 <router-outlet />

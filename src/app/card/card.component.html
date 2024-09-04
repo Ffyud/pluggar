@@ -1,13 +1,17 @@
 <div class="wrap">
     <div class="card-container">
+      @if(card()) {
       <button class="content" (click)="onClick()" [class.flipped]="!showSideA">
         <div class="card front">
-          <p>{{ cardInput()?.sideA }}</p>
+          <p>{{ card()?.sideA }}</p>
         </div>
         <div class="card back">
-          <p>{{ cardInput()?.sideB }}</p>
+          <p>{{ card()?.sideB }}</p>
         </div>
       </button>
+    } @else {
+      <p>Leeg</p>
+    }
     </div>
   </div>
   

@@ -10,7 +10,7 @@ import { Card } from '../card.model';
 })
 export class CardComponent {
 
-  @Input() cardInput!: Signal<Card | undefined>; 
+  @Input() card!: Signal<Card | undefined>; 
 
   protected showSideA = true;
 

@@ -31,6 +31,9 @@
 
     --spacing-xl: 15px;
     --radius: 4px;
+    --yes: #50ff00;
+    --maybe: #ffa700;
+    --no: lightcoral;
 
 }
 

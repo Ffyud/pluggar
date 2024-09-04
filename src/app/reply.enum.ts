@@ -1,5 +1,6 @@
 export enum Reply {
     NO = "no",
     MAYBE = "maybe",
-    YES = "yes"
+    YES = "yes",
+    NONE = "none"
 }

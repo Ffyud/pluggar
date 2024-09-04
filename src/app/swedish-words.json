@@ -1,4 +1,11 @@
 [
     { "sideA": "nöjd", "sideB": "tevreden"},
-    { "sideA": "lastbil", "sideB": "vrachtwagen"}
+    { "sideA": "lastbil", "sideB": "vrachtwagen"},
+    { "sideA": "ladssadastbil", "sideB": "vrachtwagen"},
+    { "sideA": "lastbiasdl", "sideB": "vrachtwagen"},
+    { "sideA": "lastabil", "sideB": "vrachtwagen"},
+    { "sideA": "lastasbil", "sideB": "vrachtwagen"},
+    { "sideA": "lastdbil", "sideB": "vrachtwagen"},
+    { "sideA": "lasastbil", "sideB": "vrachtwagen"}
+
 ]

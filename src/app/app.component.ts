@@ -1,10 +1,11 @@
-import { Component, computed, Signal } from '@angular/core';
+import { Component, computed, signal, Signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CardComponent } from "./card/card.component";
 import { CardReplyComponent } from "./card-reply/card-reply.component";
 import { Card } from './card.model';
 import { CardStacksComponent } from "./card-stacks/card-stacks.component";
 import swedishWords from './swedish-words.json';
+import { Reply } from './reply.enum';
 
 @Component({
   selector: 'app-root',
@@ -16,20 +17,40 @@ import swedishWords from './swedish-words.json';
 export class AppComponent {
   title = 'Pluggar';
 
-  currentCard: Signal<Card | undefined> = computed(() => {
-    console.log(this.cardList)
-    if(this.cardList.length !== 0) {
-      return this.cardList.pop();
+  swedishWords: Card[] = swedishWords;
+
+  cardList = signal(swedishWords);
+
+  currentCard: Signal<Card> = computed(() => {
+    const cards = this.cardList();
+    return cards[cards.length - 1];
+  });
+
+
+  defaultCard: Card = {
+    sideA: "a",
+    sideB: "b",
+  };
+
+  cardListAnswered: Signal<Card[]> = signal([]);
+
+  handleReply(reply: Reply) {
+
+    if(this.currentCard()) {
+      this.currentCard().answer = reply;
+      this.cardListAnswered().push(this.currentCard())
+  
+      const currentCards = this.cardList();
+      const updatedCards = currentCards.filter(card => card !== this.currentCard());
+  
+      this.cardList.update(() => { return updatedCards });
+    } else {
+      console.log("Geen kaartjes meer om te beantwoorden")
     }
 
-    return;
-  });
 
-  cardList: Card[] = swedishWords;
+  }
 
-
-  cardListAnswered: Signal<Card[]> = computed(() => {
-    return []
-  });
+  Reply = Reply;
 
 }

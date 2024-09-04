@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Reply } from '../reply.enum';
 
 @Component({
@@ -10,8 +10,10 @@ import { Reply } from '../reply.enum';
 })
 export class CardReplyComponent {
 
+  @Output() replyEvent = new EventEmitter<Reply>();
+
   onReply(reply: Reply): void {
-    console.log("Geklikt op ", reply)
+    this.replyEvent.emit(reply);
   }
 
   Reply = Reply;
