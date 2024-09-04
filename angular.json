@@ -15,6 +15,7 @@
           "options": {
             "outputPath": "dist/pluggar",
             "index": "src/index.html",
+            "baseHref": "/pluggar/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
