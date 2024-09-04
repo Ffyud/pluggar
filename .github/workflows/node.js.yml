@@ -25,10 +25,10 @@ jobs:
       - run: npm run build --if-present
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
-          path: ./dist/pluggar
+          path: ./dist
 
   deploy:
     runs-on: ubuntu-latest
