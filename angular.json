@@ -15,7 +15,7 @@
           "options": {
             "outputPath": "dist/pluggar",
             "index": "src/index.html",
-            "baseHref": "/pluggar/",
+            "baseHref": "https://ffyud.github.io/pluggar/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
