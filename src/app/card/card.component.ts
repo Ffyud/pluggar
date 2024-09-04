@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Signal } from '@angular/core';
+import { Card } from '../card.model';
 
 @Component({
   selector: 'app-card',
@@ -9,4 +10,16 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
 
+  @Input() cardInput!: Signal<Card | undefined>; 
+
+  protected showSideA = true;
+
+  onClick(): void {
+    console.log("Geklikt op kaartje")
+    if (this.showSideA) {
+      this.showSideA = false;
+    } else {
+      this.showSideA = true;
+    }
+  }
 }

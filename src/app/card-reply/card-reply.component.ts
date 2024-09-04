@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Reply } from '../reply.enum';
 
 @Component({
   selector: 'app-card-reply',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class CardReplyComponent {
 
+  onReply(reply: Reply): void {
+    console.log("Geklikt op ", reply)
+  }
+
+  Reply = Reply;
 }

@@ -1,3 +1,13 @@
-<div class="card">
-    Kaartje
-</div>
+<div class="wrap">
+    <div class="card-container">
+      <button class="content" (click)="onClick()" [class.flipped]="!showSideA">
+        <div class="card front">
+          <p>{{ cardInput()?.sideA }}</p>
+        </div>
+        <div class="card back">
+          <p>{{ cardInput()?.sideB }}</p>
+        </div>
+      </button>
+    </div>
+  </div>
+  

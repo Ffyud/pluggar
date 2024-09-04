@@ -1,23 +1,32 @@
 .card-reply {
     width: 100%;
     display: flex;
-    justify-content: space-around;
     padding-top: var(--spacing-xl);
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.card-reply button {
+    flex: 1;
 }
 
 button {
+    font-size: 1.3em;
+    font-weight: 600;
     border: none;
     outline: none;
     padding: var(--spacing-xl);
     border-radius: var(--radius);
+    box-shadow: 0px 0px 0px 4px #000;
 }
 
 button.no {
     background: lightcoral;
 }
 button.maybe {
-    background: lightyellow;
+    background: #ffa700;
 }
 button.yes {
-    background: lightgreen;
+    background: #50ff00;
 }

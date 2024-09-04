@@ -1,6 +1,54 @@
-.card {
-    width: 100%;
-    box-shadow: 0px 0px 0px 4px #000;
+.wrap {
+    position: relative;
     height: 200px;
+  }
+  
+  .card-container {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    perspective: 5000px; /* Increase perspective for more 3D effect */
+  }
+  
+  .content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .card {
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 200px;
+    position: absolute;
+    backface-visibility: hidden;
     border-radius: var(--radius);
-}
+    background: #FFF;
+    box-shadow: 0px 0px 0px 4px #000;
+  }
+
+  .card p {
+    margin: 0px;
+    font-size: 2em;
+  }
+  
+  .front {
+    transform: rotateY(0deg);
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+  }
+  
