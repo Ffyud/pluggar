@@ -1,17 +1,18 @@
 <div class="wrap">
-    <div class="card-container">
-      @if(card()) {
-      <button class="content" (click)="onClick()" [class.flipped]="!showSideA">
-        <div class="card front">
-          <p>{{ card()?.sideA }}</p>
-        </div>
-        <div class="card back">
-          <p>{{ card()?.sideB }}</p>
-        </div>
-      </button>
+  <div class="card-container">
+    @if(card()) {
+    <button class="content" (click)="onClick()" [class.flipped]="!showSideA">
+      <div class="card front">
+        <p>{{ card()?.sideA }}</p>
+      </div>
+      <div class="card back">
+        <p>{{ card()?.sideB }}</p>
+      </div>
+    </button>
     } @else {
-      <p>Leeg</p>
-    }
+    <div class="card-done">
+      <p>Alle kaartjes beantwoord</p>
     </div>
+    }
   </div>
-  
+</div>

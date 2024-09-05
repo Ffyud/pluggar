@@ -1,4 +1,4 @@
-import { Component, Input, Signal } from '@angular/core';
+import { Component, computed, Input, Signal } from '@angular/core';
 import { Card } from '../card.model';
 import { Reply } from '../reply.enum';
 
@@ -11,7 +11,11 @@ import { Reply } from '../reply.enum';
 })
 export class CardStacksComponent {
 
-  @Input() cards!: Signal<Card[]>; 
+  @Input() cards!: Signal<Card[]>;
+
+  // protected amountOfNo: Signal<number> = computed(() => { 
+  //   return this.cards().filter((card: Card) => (card.answer === Reply.NO)).length 
+  // });
 
   Reply = Reply;
 
