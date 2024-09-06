@@ -2,6 +2,7 @@
   <div class="content">
     <app-card-stacks [cards]="cardListAnswered"></app-card-stacks>
     <div class="stack">
+      <div class="counter">{{cardList().length}}</div>
       @for (card of cardList(); track card.sideA) {
         <div class="stacked-card">{{card.sideA}}</div>
       }   
