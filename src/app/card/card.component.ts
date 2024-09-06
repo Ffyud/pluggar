@@ -1,5 +1,6 @@
 import { Component, Input, Signal } from '@angular/core';
 import { Card } from '../card.model';
+import { Reply } from '../reply.enum';
 
 @Component({
   selector: 'app-card',
@@ -22,4 +23,6 @@ export class CardComponent {
       this.showSideA = true;
     }
   }
+
+  Reply = Reply;
 }

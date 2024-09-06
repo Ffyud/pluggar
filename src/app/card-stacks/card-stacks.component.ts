@@ -1,4 +1,4 @@
-import { Component, effect, computed, input, Signal } from '@angular/core';
+import { Component, effect, computed, input, Signal, EventEmitter, Output } from '@angular/core';
 import { Card } from '../card.model';
 import { Reply } from '../reply.enum';
 
@@ -11,6 +11,8 @@ import { Reply } from '../reply.enum';
 })
 export class CardStacksComponent {
 
+  @Output() addBackToListEvent = new EventEmitter<Card[]>();
+
   cards = input.required<Card[]>();
 
   amountNo = computed(() => this.cards().filter((card: Card) => (card.answer === Reply.NO)).length);
@@ -18,5 +20,13 @@ export class CardStacksComponent {
   amountYes = computed(() => this.cards().filter((card: Card) => (card.answer === Reply.YES)).length);
 
   Reply = Reply;
+
+  addBackToList(reply: Reply) {
+    const listWithReply = computed(() => {
+      return this.cards().filter((card: Card) => (card.answer === reply))
+    })
+    this.addBackToListEvent.emit(listWithReply());
+
+  }
 
 }

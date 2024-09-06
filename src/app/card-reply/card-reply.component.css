@@ -19,7 +19,7 @@ button {
     border: none;
     outline: none;
     padding: var(--spacing-xl);
-    border-radius: var(--radius);
+    border-radius: var(--radius-button);
     box-shadow: 0px 0px 0px 4px #000, inset 0px -4px 0px #000;
 }
 

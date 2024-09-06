@@ -1,11 +1,13 @@
 <div class="stacks">
     <div class="stack no-stack">
-        {{amountNo()}}
+        <div class="amount">{{amountNo()}}</div>
+        <button class="return-button" (click)="addBackToList(Reply.NO)">Plaats terug in stapel</button>
     </div>
     <div class="stack maybe-stack">
-        {{amountMaybe()}}
+        <div class="amount">{{amountMaybe()}}</div>
+        <button class="return-button"  (click)="addBackToList(Reply.MAYBE)">Plaats terug in stapel</button>
     </div>
     <div class="stack yes-stack">
-        {{amountYes()}}
+        <div class="amount"> {{amountYes()}}</div>
     </div>
 </div>

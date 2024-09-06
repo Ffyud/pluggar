@@ -26,7 +26,6 @@ export class AppComponent {
     return cards[cards.length - 1];
   });
 
-
   defaultCard: Card = {
     sideA: "a",
     sideB: "b",
@@ -34,28 +33,37 @@ export class AppComponent {
 
   cardListAnswered: WritableSignal<Card[]> = signal([]);
 
-  handleReply(reply: Reply) {
+  addBackToListEvent(cardsBack: Card[]) {
+    const currentCardList: Card[] = this.cardList();
+    
+    const completeCardList: Card[] = [
+      ...cardsBack, 
+      ...currentCardList
+    ];
 
-    if(this.currentCard()) {
+    this.cardList.update(() => {
+      return completeCardList
+    });
+
+  }
+
+  handleReply(reply: Reply) {
+    if (this.currentCard()) {
       this.currentCard().answer = reply;
-      // this.cardListAnswered.
-      // .push(this.currentCard())
-  
+
       const currentList = this.cardListAnswered();
-      
+
       if (Array.isArray(currentList)) {
         this.cardListAnswered.set([...currentList, this.currentCard()]);
       }
 
       const currentCards = this.cardList();
       const updatedCards = currentCards.filter(card => card !== this.currentCard());
-  
+
       this.cardList.update(() => { return updatedCards });
     } else {
       console.log("Geen kaartjes meer om te beantwoorden")
     }
-
-
   }
 
   Reply = Reply;
