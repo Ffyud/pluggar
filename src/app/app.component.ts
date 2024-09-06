@@ -1,4 +1,4 @@
-import { Component, computed, signal, Signal } from '@angular/core';
+import { Component, computed, signal, Signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CardComponent } from "./card/card.component";
 import { CardReplyComponent } from "./card-reply/card-reply.component";
@@ -32,14 +32,21 @@ export class AppComponent {
     sideB: "b",
   };
 
-  cardListAnswered: Signal<Card[]> = signal([]);
+  cardListAnswered: WritableSignal<Card[]> = signal([]);
 
   handleReply(reply: Reply) {
 
     if(this.currentCard()) {
       this.currentCard().answer = reply;
-      this.cardListAnswered().push(this.currentCard())
+      // this.cardListAnswered.
+      // .push(this.currentCard())
   
+      const currentList = this.cardListAnswered();
+      
+      if (Array.isArray(currentList)) {
+        this.cardListAnswered.set([...currentList, this.currentCard()]);
+      }
+
       const currentCards = this.cardList();
       const updatedCards = currentCards.filter(card => card !== this.currentCard());
   

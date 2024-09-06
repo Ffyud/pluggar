@@ -1,76 +1,32 @@
+.stacks {
+  padding-bottom: var(--spacing-xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .stacks .stack {
-    padding: var(--spacing-xl);
-    padding-left: 25px;
-    padding-top: 0px;
-    position: relative;
-    height: 50px;
-    
+  padding: var(--spacing-xl);
+  position: relative;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-weight: 600;
+  font-size: 2em;
+  box-shadow: 0px 0px 0px 4px #000;
 }
 
-.stack .card {
-    font-size:.8;
-    font-weight: 600;
-    position: absolute;
-    text-align: center;
-    width: 100px;
-    height: 50px;
-    line-height: 50px;
-    box-shadow: 0px 0px 0px 4px #000;
-    border-radius: var(--radius);
-    z-index: calc(100 - var(--i));
+.stack.no-stack {
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  background-color: var(--no);
 }
 
-.no-stack .card {
-    background-color: var(--no);
-}
-.maybe-stack .card {
-    background: var(--maybe);
-}
-.yes-stack .card {
-    background: var(--yes);
+.stack.maybe-stack {
+  background: var(--maybe);
 }
 
-.card:nth-child(1) {
-    z-index: 4;
-    transform: translateX(-25px) rotate(-2deg);
-  }
-  
-  .card:nth-child(2) {
-    z-index: 3;
-    transform: translateX(-15px) rotate(-2deg);
-  }
-  
-  .card:nth-child(3) {
-    z-index: 2;
-    transform: translateX(-5px) rotate(-2deg);
-  }
-  
-  .card:nth-child(4) {
-    z-index: 1;
-    transform: translateX(5px) rotate(-2deg);
-  }
-  .card:nth-child(5) {
-    z-index: 1;
-    transform: translateX(15px) rotate(-2deg);
-  }
-  .card:nth-child(6) {
-    z-index: 1;
-    transform: translateX(25px) rotate(-2deg);
-  }
-  .card:nth-child(7) {
-    z-index: 1;
-    transform: translateX(35px) rotate(-2deg);
-  }
-  .card:nth-child(8) {
-    z-index: 1;
-    transform: translateX(45px) rotate(-2deg);
-  }
-  .card:nth-child(9) {
-    z-index: 1;
-    transform: translateX(55px) rotate(-2deg);
-  }
-  .card:nth-child(10) {
-    z-index: 1;
-    transform: translateX(60px) rotate(-2deg);
-  }
-  
+.stack.yes-stack {
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  background: var(--yes);
+}

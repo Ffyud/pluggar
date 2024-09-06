@@ -1,4 +1,4 @@
-import { Component, computed, Input, Signal } from '@angular/core';
+import { Component, effect, computed, input, Signal } from '@angular/core';
 import { Card } from '../card.model';
 import { Reply } from '../reply.enum';
 
@@ -11,11 +11,11 @@ import { Reply } from '../reply.enum';
 })
 export class CardStacksComponent {
 
-  @Input() cards!: Signal<Card[]>;
+  cards = input.required<Card[]>();
 
-  // protected amountOfNo: Signal<number> = computed(() => { 
-  //   return this.cards().filter((card: Card) => (card.answer === Reply.NO)).length 
-  // });
+  amountNo = computed(() => this.cards().filter((card: Card) => (card.answer === Reply.NO)).length);
+  amountMaybe = computed(() => this.cards().filter((card: Card) => (card.answer === Reply.MAYBE)).length);
+  amountYes = computed(() => this.cards().filter((card: Card) => (card.answer === Reply.YES)).length);
 
   Reply = Reply;
 

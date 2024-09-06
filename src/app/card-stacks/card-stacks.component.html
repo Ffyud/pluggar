@@ -1,23 +1,11 @@
 <div class="stacks">
     <div class="stack no-stack">
-        @for (card of cards(); track card.sideA) {
-            @if (card.answer === Reply.NO) {
-                <div class="card">{{card.sideA}}</div>
-            }
-        }
+        {{amountNo()}}
     </div>
     <div class="stack maybe-stack">
-        @for (card of cards(); track card.sideA) {
-            @if (card.answer === Reply.MAYBE) {
-                <div class="card">{{card.sideA}}</div>
-            }
-        }
+        {{amountMaybe()}}
     </div>
     <div class="stack yes-stack">
-        @for (card of cards(); track card.sideA) {
-            @if (card.answer === Reply.YES) {
-                <div class="card">{{card.sideA}}</div>
-            }
-        }
+        {{amountYes()}}
     </div>
 </div>
