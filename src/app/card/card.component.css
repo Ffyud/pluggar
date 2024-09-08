@@ -77,8 +77,34 @@
   .front {
     transform: rotateY(0deg);
   }
+  .front::before {
+    content: "A";
+    position: absolute;
+    left: 0px;
+    font-size: 1.3em;
+    top: 0px;
+    background: #000;
+    color: #FFF;
+    padding: var(--spacing-xl);
+    height: 0px;
+    line-height: 0px;
+    font-weight: 600;
+  }
   
   .back {
     transform: rotateY(180deg);
+  }
+  .back::before {
+    content: "B";
+    position: absolute;
+    left: 0px;
+    font-size: 1.3em;
+    top: 0px;
+    background: #000;
+    color: #FFF;
+    padding: var(--spacing-xl);
+    height: 0px;
+    line-height: 0px;
+    font-weight: 600;
   }
   
