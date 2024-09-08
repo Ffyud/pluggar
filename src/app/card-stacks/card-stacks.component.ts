@@ -25,6 +25,7 @@ export class CardStacksComponent {
     const listWithReply = computed(() => {
       return this.cards().filter((card: Card) => (card.answer === reply))
     })
+
     this.addBackToListEvent.emit(listWithReply());
 
   }

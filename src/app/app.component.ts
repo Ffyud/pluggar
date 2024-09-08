@@ -41,6 +41,12 @@ export class AppComponent {
       ...currentCardList
     ];
 
+    const newCardsAnswered: Card[] = this.cardListAnswered().filter((card: Card) => !cardsBack.includes(card));
+    
+    this.cardListAnswered.update(() => {
+      return newCardsAnswered;
+    })
+
     this.cardList.update(() => {
       return completeCardList
     });
