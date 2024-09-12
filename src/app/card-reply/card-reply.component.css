@@ -20,15 +20,49 @@ button {
     outline: none;
     padding: var(--spacing-xl);
     border-radius: var(--radius-button);
-    box-shadow: 0px 0px 0px 4px #000, inset 0px -4px 0px #000;
 }
 
 button.no {
-    background: lightcoral;
+    background: var(--no);
 }
+
+button.no::before {
+    content: "\274C";
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 1.8em;
+    left: 0px;
+    height: 50px;
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+}
+
 button.maybe {
-    background: #ffa700;
+    background: var(--maybe);
 }
+
+button.maybe::before {
+    content: "\1f914";
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 1.8em;
+    left: 0px;
+    height: 50px;
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+}
+
 button.yes {
-    background: #50ff00;
+    background: var(--yes);
+}
+
+button.yes::before {
+    content: "\1F44D";
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 1.8em;
+    left: 0px;
+    height: 50px;
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
 }

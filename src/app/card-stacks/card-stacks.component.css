@@ -1,7 +1,22 @@
+.yes-stacks {
+  padding-bottom: var(--spacing-xl);
+}
+
+.yes-stacks .amount {
+  padding-left: var(--spacing-xl);
+  padding-right: var(--spacing-xl);
+  position: relative;
+  text-align: center;
+  line-height: 55px;
+  font-weight: 600;
+  font-size: 1.6em;
+  background: var(--yes);
+  border-radius: var(--radius);
+}
+
 .stacks {
   box-shadow: 0px 4px 0px 0px #000;
   margin-bottom: var(--spacing-xl);
-
 }
 
 .stacks .stack {
@@ -9,6 +24,7 @@
   display: grid;
   grid-template-columns: 95px 1fr;
 }
+
 .stacks .stack .amount {
   padding-left: var(--spacing-xl);
   padding-right: var(--spacing-xl);
@@ -19,7 +35,6 @@
   font-weight: 600;
   font-size: 1.6em;
   border-radius: var(--radius);
-  box-shadow: inset 0px 0px 0px 4px #000;
 }
 
 .stack .return-button {
@@ -32,7 +47,7 @@
   outline: none;
   padding: var(--spacing-xl);
   border-radius: var(--radius-button);
-  box-shadow: 0px 0px 0px 4px #000, inset 0px -4px 0px #000;
+  box-shadow: var(--box-shadow-button);
 }
 
 .stack.no-stack .amount {

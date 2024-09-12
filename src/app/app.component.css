@@ -32,9 +32,10 @@
     --spacing-xl: 15px;
     --radius: 4px;
     --radius-button: 18px;
-    --yes: #50ff00;
-    --maybe: #ffa700;
-    --no: lightcoral;
+    --box-shadow-button: inset 0px 0px 0px 4px #000, inset 0px -7px 0px #000;
+    --yes: #45dd00;
+    --maybe: #ffdb97;
+    --no: #ffc3c3;
 
 }
 

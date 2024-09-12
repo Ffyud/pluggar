@@ -1,3 +1,6 @@
+<div class="yes-stacks">
+    <div class="amount">{{amountMaybe() }} kaarten onthouden</div>
+</div>
 <div class="stacks">
     <div class="stack no-stack">
         <div class="amount">{{amountNo()}}</div>
@@ -6,8 +9,5 @@
     <div class="stack maybe-stack">
         <div class="amount">{{amountMaybe()}}</div>
         <button class="return-button"  (click)="addBackToList(Reply.MAYBE)">Plaats terug in stapel</button>
-    </div>
-    <div class="stack yes-stack">
-        <div class="amount"> {{amountYes()}}</div>
     </div>
 </div>
