@@ -3,42 +3,43 @@
 }
 
 .yes-stacks .amount {
-  padding-left: var(--spacing-xl);
-  padding-right: var(--spacing-xl);
+  padding: var(--spacing-xl);
   position: relative;
   text-align: center;
-  line-height: 55px;
   font-weight: 600;
-  font-size: 1.6em;
-  background: var(--yes);
-  border-radius: var(--radius);
 }
 
+.explainer {
+  color: #999;
+}
 .stacks {
   box-shadow: 0px 4px 0px 0px #000;
   margin-bottom: var(--spacing-xl);
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr 1fr;
 }
 
 .stacks .stack {
   padding-bottom: var(--spacing-xl);
-  display: grid;
-  grid-template-columns: 95px 1fr;
 }
 
 .stacks .stack .amount {
-  padding-left: var(--spacing-xl);
-  padding-right: var(--spacing-xl);
+  outline: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  padding: var(--spacing-xl);
   position: relative;
-  width: 50px;
+  width: 100%;
   text-align: center;
-  line-height: 55px;
   font-weight: 600;
-  font-size: 1.6em;
   border-radius: var(--radius);
+  box-shadow: var(--box-shadow-button);
 }
 
 .stack .return-button {
-  font-size: 1.3em;
   font-weight: 600;
   text-decoration: none;
   color: #000;
