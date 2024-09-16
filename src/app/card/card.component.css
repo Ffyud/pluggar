@@ -1,11 +1,15 @@
+
 .wrap {
     position: relative;
     height: 200px;
+
   }
   
   .card-container {
     position: absolute;
-    width: 100%;
+    margin-left: var(--spacing-xl);
+    margin-right: var(--spacing-xl);
+    width: calc(100% - 30px);
     height: 200px;
     perspective: 5000px;
     z-index: 100;

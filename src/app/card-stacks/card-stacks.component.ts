@@ -13,17 +13,18 @@ export class CardStacksComponent {
 
   @Output() addBackToListEvent = new EventEmitter<Card[]>();
 
-  cards = input.required<Card[]>();
+  cardsAnswered = input.required<Card[]>();
+  cardsTotal = input.required<Card[]>();
 
-  amountNo = computed(() => this.cards().filter((card: Card) => (card.answer === Reply.NO)).length);
-  amountMaybe = computed(() => this.cards().filter((card: Card) => (card.answer === Reply.MAYBE)).length);
-  amountYes = computed(() => this.cards().filter((card: Card) => (card.answer === Reply.YES)).length);
+  amountNo = computed(() => this.cardsAnswered().filter((card: Card) => (card.answer === Reply.NO)).length);
+  amountMaybe = computed(() => this.cardsAnswered().filter((card: Card) => (card.answer === Reply.MAYBE)).length);
+  amountYes = computed(() => this.cardsAnswered().filter((card: Card) => (card.answer === Reply.YES)).length);
 
   Reply = Reply;
 
   addBackToList(reply: Reply) {
     const listWithReply = computed(() => {
-      return this.cards().filter((card: Card) => (card.answer === reply))
+      return this.cardsAnswered().filter((card: Card) => (card.answer === reply))
     })
 
     this.addBackToListEvent.emit(listWithReply());

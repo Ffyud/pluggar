@@ -32,7 +32,7 @@
     --spacing-xl: 15px;
     --radius: 4px;
     --radius-button: 18px;
-    --box-shadow-button: inset 0px -4px 0px 0px #00000057;
+    --box-shadow-button: inset 0px 0px 0px 4px #00000057;
     --yes: #45dd00;
     --maybe: #ffdb97;
     --no: #ffc3c3;
@@ -57,7 +57,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: end;
-    padding: 1rem;
     box-sizing: inherit;
     position: relative;
 }
@@ -65,8 +64,13 @@ main {
 .content {
     width: 100%;
     max-width: 450px;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
 }
 
 .content h1 {
     margin-top: 1.75rem;
 }
+

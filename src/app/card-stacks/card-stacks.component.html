@@ -1,12 +1,16 @@
-<div class="yes-stacks">
-    <div class="amount">{{amountYes() }} kaarten onthouden.<br/> 
-        <span class="explainer">Kaarten die je niet hebt onthouden kan je terugplaatsen in de stapel.</span></div>
+<div class="stacks">
+    <div class="stack total-stack">
+        <button class="amount">{{cardsTotal().length}}</button>
+    </div>
+    <div class="stack yes-stack">
+        <button class="amount" (click)="addBackToList(Reply.YES)">{{amountYes()}}</button>
+    </div>
 </div>
 <div class="stacks">
     <div class="stack no-stack">
-        <button class="amount" (click)="addBackToList(Reply.NO)">{{amountNo()}} kaarten</button>
+        <button class="amount" (click)="addBackToList(Reply.NO)">{{amountNo()}}</button>
     </div>
     <div class="stack maybe-stack">
-        <button class="amount" (click)="addBackToList(Reply.MAYBE)">{{amountMaybe()}} kaarten</button>
+        <button class="amount" (click)="addBackToList(Reply.MAYBE)">{{amountMaybe()}}</button>
     </div>
 </div>

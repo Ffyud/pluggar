@@ -1,7 +1,8 @@
 <main class="main">
   <div class="content">
-    <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [cards]="cardListAnswered()"></app-card-stacks>
-    <p class="counter">{{cardList().length}} kaarten in de stapel</p>
+    <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" 
+    [cardsAnswered]="cardListAnswered()"
+    [cardsTotal]="cardList()"></app-card-stacks>
     <app-card [card]="currentCard" />
     <app-card-reply (replyEvent)="handleReply($event)" />
   </div>
