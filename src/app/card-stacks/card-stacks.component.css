@@ -58,3 +58,6 @@
 .stack.yes-stack .amount {
   background: var(--yes);
 }
+.stack.total-stack .amount {
+  background: none;
+}
