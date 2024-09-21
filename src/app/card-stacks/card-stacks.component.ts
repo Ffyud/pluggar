@@ -1,11 +1,12 @@
 import { Component, effect, computed, input, Signal, EventEmitter, Output } from '@angular/core';
+import {DecimalPipe } from '@angular/common';
 import { Card } from '../card.model';
 import { Reply } from '../reply.enum';
 
 @Component({
   selector: 'app-card-stacks',
   standalone: true,
-  imports: [],
+  imports: [DecimalPipe],
   templateUrl: './card-stacks.component.html',
   styleUrl: './card-stacks.component.css'
 })

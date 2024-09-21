@@ -32,7 +32,9 @@
     --spacing-xl: 15px;
     --radius: 4px;
     --radius-button: 18px;
-    --box-shadow-button: inset 0px 0px 0px 4px #00000057;
+    --box-shadow-button: inset 0px 0px 0px 2px #00000057;
+    /* --box-shadow-button: inset 0px 0px 0px 4px #000; */
+
     --yes: #45dd00;
     --maybe: #ffdb97;
     --no: #ffc3c3;
@@ -66,7 +68,7 @@ main {
     max-width: 450px;
     height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto 1fr auto;
     align-items: center;
 }
 
@@ -74,3 +76,17 @@ main {
     margin-top: 1.75rem;
 }
 
+header.cardListHeader {
+    box-shadow: inset 0px -2px 0px 0px #000;
+    padding: var(--spacing-xl);
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #000;  
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+header.cardListHeader .percentage {
+    color: #329e00;  
+
+}

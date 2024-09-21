@@ -19,6 +19,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.stacks .stack {
+  position: relative;
+}
+
 .stacks .stack .amount {
   outline: none;
   border: none;
@@ -32,7 +36,6 @@
   font-weight: 600;
   font-size: 1.3em;
   border-radius: var(--radius-button);
-  box-shadow: var(--box-shadow-button);
 }
 
 .stack .return-button {
@@ -49,15 +52,23 @@
 
 .stack.no-stack .amount {
   background-color: var(--no);
+  box-shadow: var(--box-shadow-button);
+
 }
 
 .stack.maybe-stack .amount{
   background: var(--maybe);
+  box-shadow: var(--box-shadow-button);
+
 }
 
 .stack.yes-stack .amount {
   background: var(--yes);
+  box-shadow: var(--box-shadow-button);
+
 }
 .stack.total-stack .amount {
   background: none;
+  box-shadow: inset 0px 0px 0px 2px #000;
+
 }
