@@ -77,6 +77,7 @@ main {
 }
 
 header.cardListHeader {
+    cursor: pointer;
     box-shadow: inset 0px -2px 0px 0px #000;
     padding: var(--spacing-xl);
     font-size: 1.4em;

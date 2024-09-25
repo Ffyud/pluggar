@@ -1,6 +1,6 @@
-<dialog #listSelectDialog open>
+<dialog [open]="isOpen()">
   <ul *ngFor="let list of cardsList()">
-    <li (click)="onListSelect(list.name, listSelectDialog)">
+    <li (click)="onListSelect(list.name)">
       <span>{{list.name}}</span>
       <span class="percentage">25%</span>
     </li>

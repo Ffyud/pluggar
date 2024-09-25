@@ -23,6 +23,8 @@ export class AppComponent {
   selectedWords: Card[] = this.storageService.getCards('Zweedse woorden 1');
   selectedListName = 'Zweedse woorden 1';
 
+  isDialogOpen = signal(false);
+
   listName = signal(this.selectedListName);
   cardList = signal(this.selectedWords);
 
@@ -38,7 +40,11 @@ export class AppComponent {
 
   cardListAnswered: WritableSignal<Card[]> = signal([]);
 
-  addBackToListEvent(cardsBack: Card[]) {
+  /**
+   * Adds cards back to the original card list
+   * @param cardsBack 
+   */
+  addBackToListEvent(cardsBack: Card[]): void {
     const currentCardList: Card[] = this.cardList();
 
     const completeCardList: Card[] = [
@@ -56,9 +62,10 @@ export class AppComponent {
       return completeCardList
     });
 
+    this.storageService.saveCardsWithAnswer(this.cardList(), this.listName());
   }
 
-  handleReply(reply: Reply) {
+  handleReply(reply: Reply): void {
     if (this.currentCard()) {
       this.currentCard().answer = reply;
 
@@ -72,26 +79,31 @@ export class AppComponent {
       const updatedCards = currentCards.filter(card => card !== this.currentCard());
 
       this.cardList.update(() => { return updatedCards });
-    } else {
-      console.log("Geen kaartjes meer om te beantwoorden")
+
+      this.storageService.saveCardsWithAnswer(this.cardList(), this.listName());
     }
   }
 
-  handleListSelect(name: string) {
-    console.log("Stapel gekozen", name);
-
+  handleListSelect(name: string): void {
     this.listName.update(() => {
       return name;
     })
-    
-    this.cardList.update(() => { 
-      return this.storageService.getCards(name); 
+
+    this.cardList.update(() => {
+      return this.storageService.getCards(name);
+    });
+
+    this.isDialogOpen.update(() => {
+      return false;
     });
 
   }
 
-  onHeaderClick() {
-    // TODO Open dialog bij klik op header
+  onHeaderClick(): void {
+    this.isDialogOpen.update(() => {
+      return true;
+    });
+    console.log(this.isDialogOpen())
   }
 
   Reply = Reply;

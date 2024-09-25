@@ -1,9 +1,7 @@
-import { Component, computed, EventEmitter, inject, Output, signal } from '@angular/core';
+import { Component, computed, EventEmitter, inject, input, Output, signal } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { LocalstorageService } from '../localstorage.service';
-import { Card } from '../card.model';
 import { CardsList } from '../cardslist.model';
-import { Reply } from '../reply.enum';
 
 @Component({
   selector: 'app-cardlist-dialog',
@@ -14,19 +12,18 @@ import { Reply } from '../reply.enum';
 })
 export class CardlistDialogComponent {
 
+  isOpen = input.required<boolean>();
+
+  @Output() listSelectEvent = new EventEmitter<string>();
+
   private storageService = inject(LocalstorageService);
 
   listOfCardslist: CardsList[] = this.storageService.getListOfCardslist();
 
   protected cardsList = signal(this.listOfCardslist);
 
-  @Output() listSelectEvent = new EventEmitter<string>();
-
-  onListSelect(selected: string, dialog: HTMLDialogElement): void {
+  onListSelect(selected: string): void {
     this.listSelectEvent.emit(selected);
-    dialog.close();
-
-    // TODO close dialog
   }
 
 

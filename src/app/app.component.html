@@ -1,6 +1,6 @@
 <main class="main">
   <div class="content">
-    <app-cardlist-dialog (listSelectEvent)="handleListSelect($event)"/>
+    <app-cardlist-dialog [isOpen]="isDialogOpen()" (listSelectEvent)="handleListSelect($event)"/>
     <header class="cardListHeader" (click)="onHeaderClick()">
       <span class="menu">☰</span>
       <span>{{listName()}}</span>

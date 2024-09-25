@@ -38,11 +38,13 @@ export class LocalstorageService {
 
   getCards(name: string): Card[] {
     const cardItem = this.cardsList.find(item => item.name === name);
+    // TODO haal lijst uit localstorage als die bestaat, en anders niet
     console.log(cardItem?.cardList)
     return cardItem ? cardItem.cardList : [];
   }
 
-  updateCardsWithAnswer(): void {
+  saveCardsWithAnswer(cardList: Card[], listName: string): void {
+    console.log('save cards with answer')
     // TODO opslaan van lijst met antwoorden 
    // return JSON.parse(localStorage.getItem(key));
   }
