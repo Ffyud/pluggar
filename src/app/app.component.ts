@@ -20,9 +20,11 @@ export class AppComponent {
 
   private storageService = inject(LocalstorageService);
 
-  swedishWords: Card[] = this.storageService.getCards('Zweedse lijst 1');
+  selectedWords: Card[] = this.storageService.getCards('Zweedse woorden 1');
+  selectedListName = 'Zweedse woorden 1';
 
-  cardList = signal(this.swedishWords);
+  listName = signal(this.selectedListName);
+  cardList = signal(this.selectedWords);
 
   currentCard: Signal<Card> = computed(() => {
     const cards = this.cardList();
@@ -38,14 +40,14 @@ export class AppComponent {
 
   addBackToListEvent(cardsBack: Card[]) {
     const currentCardList: Card[] = this.cardList();
-    
+
     const completeCardList: Card[] = [
-      ...cardsBack, 
+      ...cardsBack,
       ...currentCardList
     ];
 
     const newCardsAnswered: Card[] = this.cardListAnswered().filter((card: Card) => !cardsBack.includes(card));
-    
+
     this.cardListAnswered.update(() => {
       return newCardsAnswered;
     })
@@ -75,8 +77,21 @@ export class AppComponent {
     }
   }
 
-  handleListSelect(selection: string) {
-    console.log("Stapel gekozen", selection);
+  handleListSelect(name: string) {
+    console.log("Stapel gekozen", name);
+
+    this.listName.update(() => {
+      return name;
+    })
+    
+    this.cardList.update(() => { 
+      return this.storageService.getCards(name); 
+    });
+
+  }
+
+  onHeaderClick() {
+    // TODO Open dialog bij klik op header
   }
 
   Reply = Reply;

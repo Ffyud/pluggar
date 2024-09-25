@@ -83,10 +83,14 @@ header.cardListHeader {
     font-weight: 600;
     color: #000;  
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr auto;
 }
 
 header.cardListHeader .percentage {
+    padding-left: var(--spacing-xl);
     color: #329e00;  
+}
 
+header.cardListHeader .menu {
+    padding-right: var(--spacing-xl);
 }

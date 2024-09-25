@@ -22,8 +22,9 @@ export class CardlistDialogComponent {
 
   @Output() listSelectEvent = new EventEmitter<string>();
 
-  onListSelect(selected: string): void {
+  onListSelect(selected: string, dialog: HTMLDialogElement): void {
     this.listSelectEvent.emit(selected);
+    dialog.close();
 
     // TODO close dialog
   }

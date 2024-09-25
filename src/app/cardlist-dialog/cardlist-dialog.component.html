@@ -1,9 +1,8 @@
-<dialog open>
-  <p>Kies een stapel kaarten om te oefenen</p>
-    <ul *ngFor="let list of cardsList()">
-      <li (click)="onListSelect(list.name)">
-        <span>{{list.name}}</span>
-        <span class="percentage">25%</span>
-      </li>
-    </ul>
-  </dialog>
+<dialog #listSelectDialog open>
+  <ul *ngFor="let list of cardsList()">
+    <li (click)="onListSelect(list.name, listSelectDialog)">
+      <span>{{list.name}}</span>
+      <span class="percentage">25%</span>
+    </li>
+  </ul>
+</dialog>
