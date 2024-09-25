@@ -1,25 +1,28 @@
-import { Component, computed, signal, Signal, WritableSignal } from '@angular/core';
+import { Component, computed, signal, Signal, WritableSignal, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CardComponent } from "./card/card.component";
 import { CardReplyComponent } from "./card-reply/card-reply.component";
 import { Card } from './card.model';
 import { CardStacksComponent } from "./card-stacks/card-stacks.component";
-import swedishWords from './swedish-words.json';
 import { Reply } from './reply.enum';
+import { LocalstorageService } from './localstorage.service';
+import { CardlistDialogComponent } from "./cardlist-dialog/cardlist-dialog.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CardComponent, CardReplyComponent, CardStacksComponent],
+  imports: [RouterOutlet, CardComponent, CardReplyComponent, CardStacksComponent, CardlistDialogComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Pluggar';
 
-  swedishWords: Card[] = swedishWords;
+  private storageService = inject(LocalstorageService);
 
-  cardList = signal(swedishWords);
+  swedishWords: Card[] = this.storageService.getCards('Zweedse lijst 1');
+
+  cardList = signal(this.swedishWords);
 
   currentCard: Signal<Card> = computed(() => {
     const cards = this.cardList();
@@ -70,6 +73,10 @@ export class AppComponent {
     } else {
       console.log("Geen kaartjes meer om te beantwoorden")
     }
+  }
+
+  handleListSelect(selection: string) {
+    console.log("Stapel gekozen", selection);
   }
 
   Reply = Reply;
