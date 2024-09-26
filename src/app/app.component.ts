@@ -7,11 +7,12 @@ import { CardStacksComponent } from "./card-stacks/card-stacks.component";
 import { Reply } from './reply.enum';
 import { LocalstorageService } from './localstorage.service';
 import { CardlistDialogComponent } from "./cardlist-dialog/cardlist-dialog.component";
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CardComponent, CardReplyComponent, CardStacksComponent, CardlistDialogComponent],
+  imports: [RouterOutlet, DecimalPipe, CardComponent, CardReplyComponent, CardStacksComponent, CardlistDialogComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,8 +21,8 @@ export class AppComponent {
 
   private storageService = inject(LocalstorageService);
 
-  selectedWords: Card[] = this.storageService.getCards('Zweedse woorden 1');
-  selectedListName = 'Zweedse woorden 1';
+  selectedWords: Card[] = this.storageService.getCards(this.storageService.getSelectedList());
+  selectedListName = this.storageService.getSelectedList();
 
   isDialogOpen = signal(false);
 
@@ -29,58 +30,49 @@ export class AppComponent {
   cardList = signal(this.selectedWords);
 
   currentCard: Signal<Card> = computed(() => {
-    const cards = this.cardList();
+    const cards: Card[] = this.cardList().filter((card: Card) => (!card.answer));
     return cards[cards.length - 1];
   });
 
-  defaultCard: Card = {
-    sideA: "a",
-    sideB: "b",
-  };
+  // defaultCard: Card = {
+  //   sideA: "a",
+  //   sideB: "b",
+  // };
 
-  cardListAnswered: WritableSignal<Card[]> = signal([]);
+  percentage(cardsList: Card[]): number {
+    const amountYes = cardsList.filter((card: Card) => (card.answer === Reply.YES)).length;
+    const amountTotal = cardsList.length;
+    return (amountYes / amountTotal) * 100
+  }
 
-  /**
-   * Adds cards back to the original card list
-   * @param cardsBack 
-   */
-  addBackToListEvent(cardsBack: Card[]): void {
-    const currentCardList: Card[] = this.cardList();
-
-    const completeCardList: Card[] = [
-      ...cardsBack,
-      ...currentCardList
-    ];
-
-    const newCardsAnswered: Card[] = this.cardListAnswered().filter((card: Card) => !cardsBack.includes(card));
-
-    this.cardListAnswered.update(() => {
-      return newCardsAnswered;
-    })
-
-    this.cardList.update(() => {
-      return completeCardList
+  addBackToListEvent(reply: Reply): void {
+    console.log("Gegegeven antwoord verwijderd:", reply);
+    let clearedCards: Card[] = this.cardList().map((card: Card) => {
+      if (card.answer === reply) {
+        return { ...card, answer: undefined };
+      }
+      return card;
     });
 
-    this.storageService.saveCardsWithAnswer(this.cardList(), this.listName());
+    this.cardList.update(() => {
+      return clearedCards
+    });
+
+    this.storageService.saveCards(this.cardList(), this.listName());
   }
 
   handleReply(reply: Reply): void {
     if (this.currentCard()) {
+      console.log('Antwoord gegeven op kaart:', this.currentCard().sideA, reply);
       this.currentCard().answer = reply;
 
-      const currentList = this.cardListAnswered();
+      const currentList = this.cardList().filter((card: Card) => (card !== this.currentCard()));
 
       if (Array.isArray(currentList)) {
-        this.cardListAnswered.set([...currentList, this.currentCard()]);
+        this.cardList.set([...currentList, this.currentCard()]);
       }
 
-      const currentCards = this.cardList();
-      const updatedCards = currentCards.filter(card => card !== this.currentCard());
-
-      this.cardList.update(() => { return updatedCards });
-
-      this.storageService.saveCardsWithAnswer(this.cardList(), this.listName());
+      this.storageService.saveCards(this.cardList(), this.listName());
     }
   }
 
@@ -96,14 +88,16 @@ export class AppComponent {
     this.isDialogOpen.update(() => {
       return false;
     });
-
   }
 
   onHeaderClick(): void {
     this.isDialogOpen.update(() => {
+      if (this.isDialogOpen()) {
+        return false;
+      }
       return true;
+
     });
-    console.log(this.isDialogOpen())
   }
 
   Reply = Reply;

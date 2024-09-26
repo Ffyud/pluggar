@@ -3,7 +3,8 @@ import { CardsList } from './cardslist.model';
 import { Card } from './card.model';
 
 import swedishWords from './swedish-words.json';
-import worldCapitals from './world-capitals.json';
+import swedishJobs from './swedish-jobs.json';
+import swedishVerbs from './swedish-verbs.json';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ import worldCapitals from './world-capitals.json';
 export class LocalstorageService {
 
   swedishWords: Card[] = swedishWords;
-  worldCapitals: Card[] = worldCapitals;
+  swedishVerbs: Card[] = swedishVerbs;
+  swedishJobs: Card[] = swedishJobs;
 
 
   cardsList: CardsList[] = [
@@ -20,32 +22,54 @@ export class LocalstorageService {
       cardList: this.swedishWords
     },
     {
-      name: 'Zweedse woorden 2',
-      cardList: this.swedishWords
+      name: 'Zweedse werkwoorden',
+      cardList: this.swedishVerbs
     },
     {
-      name: 'Hoofdsteden van de wereld',
-      cardList: this.worldCapitals
+      name: 'Zweedse banen',
+      cardList: this.swedishJobs
+    },
+    {
+      name: 'Test',
+      cardList: [
+        { "sideA": "kaartje 1", "sideB": "zijn" },
+        { "sideA": "kaartje 2", "sideB": "zijn" }
+      ]
     }
   ];
 
-  constructor() { } 
+  constructor() { }
 
   getListOfCardslist(): CardsList[] {
-    console.log('getListOfCardslist')
-      return this.cardsList;
+    return this.cardsList;
   }
 
-  getCards(name: string): Card[] {
-    const cardItem = this.cardsList.find(item => item.name === name);
-    // TODO haal lijst uit localstorage als die bestaat, en anders niet
-    console.log(cardItem?.cardList)
+  getSelectedList(): string {
+    const selectedList = localStorage.getItem('selectedList');
+    if(selectedList) {
+      return selectedList;
+    }
+    return '';
+  }
+
+  getCards(listName: string): Card[] {
+    if(listName !== '') {
+      localStorage.setItem('selectedList', listName);
+    }
+
+    const cardsInLocalStorage = localStorage.getItem(listName);
+    if(cardsInLocalStorage) {
+      const cards: CardsList = JSON.parse(cardsInLocalStorage);
+      return cards.cardList;
+    }
+
+    const cardItem = this.cardsList.find(item => item.name === listName);
     return cardItem ? cardItem.cardList : [];
   }
 
-  saveCardsWithAnswer(cardList: Card[], listName: string): void {
-    console.log('save cards with answer')
-    // TODO opslaan van lijst met antwoorden 
-   // return JSON.parse(localStorage.getItem(key));
+  saveCards(cards: Card[], listName: string): void {
+    const cardsList: CardsList = { name: listName, cardList: cards }
+    localStorage.setItem(listName, JSON.stringify(cardsList));
   }
+
 }

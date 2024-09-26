@@ -1,13 +1,18 @@
 <main class="main">
   <div class="content">
-    <app-cardlist-dialog [isOpen]="isDialogOpen()" (listSelectEvent)="handleListSelect($event)"/>
+    <app-cardlist-dialog [isOpen]="isDialogOpen()" (listSelectEvent)="handleListSelect($event)" />
     <header class="cardListHeader" (click)="onHeaderClick()">
       <span class="menu">☰</span>
-      <span>{{listName()}}</span>
-      <span class="percentage">25%</span>
+      <span>
+        @if(listName()) { {{listName()}}}
+      </span>
+      <span class="percentage">
+        @if(cardList().length !== 0) {
+        {{ percentage(cardList()) | number: '1.0-0'}}%
+        }
+      </span>
     </header>
-    <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [cardsAnswered]="cardListAnswered()"
-      [cardsTotal]="cardList()"></app-card-stacks>
+    <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [cardsList]="cardList()"></app-card-stacks>
     <app-card [card]="currentCard" />
     <app-card-reply (replyEvent)="handleReply($event)" />
   </div>

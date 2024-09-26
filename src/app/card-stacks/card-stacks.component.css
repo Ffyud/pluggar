@@ -11,19 +11,25 @@
 .explainer {
   color: #999;
 }
-.stacks {
+
+.total-stack {
   padding: var(--spacing-xl);
   padding-bottom: 0px;
-  display: grid;
-  gap: var(--spacing-xl);
-  grid-template-columns: 1fr 1fr;
+
 }
 
-.stacks .stack {
+.stacks-answered {
+  padding: var(--spacing-xl);
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.stack {
   position: relative;
 }
 
-.stacks .stack .amount {
+.stack .amount {
   outline: none;
   border: none;
   color: #000;

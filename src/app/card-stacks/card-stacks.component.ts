@@ -1,4 +1,4 @@
-import { Component, effect, computed, input, Signal, EventEmitter, Output } from '@angular/core';
+import { Component, computed, input, EventEmitter, Output } from '@angular/core';
 import {DecimalPipe } from '@angular/common';
 import { Card } from '../card.model';
 import { Reply } from '../reply.enum';
@@ -12,24 +12,19 @@ import { Reply } from '../reply.enum';
 })
 export class CardStacksComponent {
 
-  @Output() addBackToListEvent = new EventEmitter<Card[]>();
+  @Output() addBackToListEvent = new EventEmitter<Reply>();
 
-  cardsAnswered = input.required<Card[]>();
-  cardsTotal = input.required<Card[]>();
+  cardsList = input.required<Card[]>();
 
-  amountNo = computed(() => this.cardsAnswered().filter((card: Card) => (card.answer === Reply.NO)).length);
-  amountMaybe = computed(() => this.cardsAnswered().filter((card: Card) => (card.answer === Reply.MAYBE)).length);
-  amountYes = computed(() => this.cardsAnswered().filter((card: Card) => (card.answer === Reply.YES)).length);
+  amountNoAnswer = computed(() => this.cardsList().filter((card: Card) => !card.answer).length);
+  amountNo = computed(() => this.cardsList().filter((card: Card) => (card.answer === Reply.NO)).length);
+  amountMaybe = computed(() => this.cardsList().filter((card: Card) => (card.answer === Reply.MAYBE)).length);
+  amountYes = computed(() => this.cardsList().filter((card: Card) => (card.answer === Reply.YES)).length);
 
   Reply = Reply;
 
   addBackToList(reply: Reply) {
-    const listWithReply = computed(() => {
-      return this.cardsAnswered().filter((card: Card) => (card.answer === reply))
-    })
-
-    this.addBackToListEvent.emit(listWithReply());
-
+    this.addBackToListEvent.emit(reply);
   }
 
 }

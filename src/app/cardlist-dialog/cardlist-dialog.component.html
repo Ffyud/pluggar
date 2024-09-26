@@ -2,7 +2,8 @@
   <ul *ngFor="let list of cardsList()">
     <li (click)="onListSelect(list.name)">
       <span>{{list.name}}</span>
-      <span class="percentage">25%</span>
+      <span class="percentage"></span> 
+      <!-- TODO percentage in dialog ook toevoegen -->
     </li>
   </ul>
 </dialog>
