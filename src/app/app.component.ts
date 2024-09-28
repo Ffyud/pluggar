@@ -34,11 +34,6 @@ export class AppComponent {
     return cards[cards.length - 1];
   });
 
-  // defaultCard: Card = {
-  //   sideA: "a",
-  //   sideB: "b",
-  // };
-
   percentage(cardsList: Card[]): number {
     const amountYes = cardsList.filter((card: Card) => (card.answer === Reply.YES)).length;
     const amountTotal = cardsList.length;

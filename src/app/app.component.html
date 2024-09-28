@@ -4,10 +4,12 @@
     <header class="cardListHeader" (click)="onHeaderClick()">
       <span class="menu">☰</span>
       <span>
-        @if(listName()) { {{listName()}}}
+        @if (listName()) {
+        {{listName()}}
+        }
       </span>
       <span class="percentage">
-        @if(cardList().length !== 0) {
+        @if (cardList().length !== 0) {
         {{ percentage(cardList()) | number: '1.0-0'}}%
         }
       </span>
