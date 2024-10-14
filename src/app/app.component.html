@@ -2,10 +2,13 @@
   <div class="content">
     <app-cardlist-dialog [isOpen]="isDialogOpen()" (listSelectEvent)="handleListSelect($event)" />
     <header class="cardListHeader" (click)="onHeaderClick()">
-      <span class="menu">☰</span>
       <span>
         @if (listName()) {
         {{listName()}}
+        } @else {
+          <button class="select-list">
+            kies een lijst
+          </button>
         }
       </span>
       <span class="percentage">
