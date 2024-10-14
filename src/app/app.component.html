@@ -20,7 +20,7 @@
       </span>
     </header>
     <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [cardsList]="cardList()"></app-card-stacks>
-    <app-card [card]="currentCard" />
+    <app-card [replyIsNo]="replyIsNo()" [card]="currentCard" />
     <app-card-reply (replyEvent)="handleReply($event)" />
   </div>
 </main>

@@ -26,6 +26,8 @@ export class AppComponent {
 
   isDialogOpen = signal(false);
 
+  replyIsNo = signal(false);
+
   listName = signal(this.selectedListName);
   cardList = signal(this.selectedWords);
 
@@ -57,14 +59,38 @@ export class AppComponent {
   }
 
   handleReply(reply: Reply): void {
-    if (this.currentCard()) {
-      console.log('Antwoord gegeven op kaart:', this.currentCard().sideA, reply);
-      this.currentCard().answer = reply;
+    console.log('Antwoord gegeven op kaart:', this.currentCard().sideA, reply);
+    if (reply === Reply.NO) {
+      this.replyIsNo.update(() => { return true });
+      console.log('Antwoord is nee, laat andere kant zien.')
 
-      const currentList = this.cardList().filter((card: Card) => (card !== this.currentCard()));
+      setTimeout(() => {
+        this.replyIsNo.update(() => { return false });
+
+        setTimeout(() => {
+          if(!this.replyIsNo()) {
+            this.updateCurrentCard(this.currentCard(), reply)
+          }
+        }, 1000)
+      }, 1000);
+
+
+
+      
+    } else {
+      this.replyIsNo.update(() => { return false });
+      this.updateCurrentCard(this.currentCard(), reply)
+    }
+  }
+
+  updateCurrentCard(currentCard: Card, reply: Reply) {
+    if (currentCard) {
+      currentCard.answer = reply;
+
+      const currentList = this.cardList().filter((card: Card) => (card !== currentCard));
 
       if (Array.isArray(currentList)) {
-        this.cardList.set([...currentList, this.currentCard()]);
+        this.cardList.set([...currentList, currentCard]);
       }
 
       this.storageService.saveCards(this.cardList(), this.listName());

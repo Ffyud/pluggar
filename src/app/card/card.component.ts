@@ -11,9 +11,14 @@ import { Reply } from '../reply.enum';
 })
 export class CardComponent {
 
-  @Input() card!: Signal<Card | undefined>; 
-
   protected showSideA = true;
+  protected answerNo = false;
+
+  @Input() card!: Signal<Card | undefined>;
+  @Input() set replyIsNo(value: boolean) {
+    this.showSideA = value ? false : true;
+    this.answerNo = value
+  }
 
   onClick(): void {
     console.log("Geklikt op kaartje")

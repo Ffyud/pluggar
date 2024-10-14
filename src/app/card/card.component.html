@@ -6,7 +6,7 @@
         [class.yes]="card()?.answer === Reply.YES">
         <p>{{ card()?.sideA }}</p>
       </div>
-      <div class="card back">
+      <div class="card back" [class.replyIsNo]="answerNo">
         <p>{{ card()?.sideB }}</p>
       </div>
     </button>
