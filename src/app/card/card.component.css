@@ -30,7 +30,7 @@
   height: 100%;
   line-height: 200px;
   background: #E6E6E6;
-  box-shadow: 0px 0px 0px 2px #000;
+  box-shadow: 0px 0px 0px 2px #515151;
 
 }
 
@@ -46,20 +46,21 @@
   line-height: 200px;
   position: absolute;
   backface-visibility: hidden;
-  background: #FFF;
-  box-shadow: inset 0px 0px 0px 2px #000;
+  background: #F3F3F3;
+  border-radius: 4px;
+  box-shadow: inset 0px 0px 0px 2px #515151;
 }
 
 .yes {
-  box-shadow: inset 0px 0px 0px 6px var(--yes), 0px 0px 0px 4px #000;
+  box-shadow: inset 0px 0px 0px 6px var(--yes), 0px 0px 0px 4px #515151;
 }
 
 .maybe {
-  box-shadow: inset 0px 0px 0px 6px var(--maybe), 0px 0px 0px 4px #000;
+  box-shadow: inset 0px 0px 0px 6px var(--maybe), 0px 0px 0px 4px #515151;
 }
 
 .no {
-  box-shadow: inset 0px 0px 0px 6px var(--no), 0px 0px 0px 4px #000;
+  box-shadow: inset 0px 0px 0px 6px var(--no), 0px 0px 0px 4px #515151;
 
 }
 
@@ -89,7 +90,7 @@
   left: 0px;
   font-size: 1.3em;
   top: 0px;
-  background: #000;
+  background: #515151;
   color: #FFF;
   padding: var(--spacing-xl);
   height: 0px;
@@ -107,7 +108,7 @@
   left: 0px;
   font-size: 1.3em;
   top: 0px;
-  background: #000;
+  background: #515151;
   color: #FFF;
   padding: var(--spacing-xl);
   height: 0px;

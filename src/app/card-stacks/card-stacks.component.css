@@ -15,11 +15,13 @@
 .total-stack {
   padding: var(--spacing-xl);
   padding-bottom: 0px;
-
+  padding-right: 21px;
+  min-height: 57px;
 }
 
 .stacks-answered {
   padding: var(--spacing-xl);
+  padding-bottom: 0px;
   display: grid;
   gap: var(--spacing-xl);
   grid-template-columns: 1fr 1fr 1fr;
@@ -27,6 +29,29 @@
 
 .stack {
   position: relative;
+}
+
+.card-on-stack {
+  display: inline-block;
+  border-radius: 4px;
+  margin-right: -10px;
+  box-shadow: inset 0px 0px 0px 2px #515151;
+  width: 20px;
+  height: 15px;
+  position: relative;
+  background: #F3F3F3;
+  overflow: hidden;
+}
+
+.card-on-stack::after {
+  background: #515151;
+  position: absolute;
+  left: 0px;
+  top: 1px;
+  font-size: 1.2em;
+  width: 4px;
+  height: 3px;
+  content: "";
 }
 
 .stack .amount {

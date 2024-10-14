@@ -1,6 +1,3 @@
-<div class="stack total-stack">
-    <button class="amount">{{amountNoAnswer()}}</button>
-</div>
 <div class="stacks-answered">
     <div class="stack no-stack">
         <button class="amount" (click)="addBackToList(Reply.NO)">{{amountNo()}}</button>
@@ -11,4 +8,8 @@
     <div class="stack yes-stack">
         <button class="amount" (click)="addBackToList(Reply.YES)">{{amountYes()}}</button>
     </div>
+</div>
+<div class="stack total-stack">
+    <span class="card-on-stack" *ngFor="let item of [].constructor(amountNoAnswer()); let i = index"></span>
+    <!-- <button class="amount">{{amountNoAnswer()}}</button> -->
 </div>

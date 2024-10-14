@@ -1,12 +1,12 @@
 import { Component, computed, input, EventEmitter, Output } from '@angular/core';
-import {DecimalPipe } from '@angular/common';
+import {DecimalPipe, NgFor } from '@angular/common';
 import { Card } from '../card.model';
 import { Reply } from '../reply.enum';
 
 @Component({
   selector: 'app-card-stacks',
   standalone: true,
-  imports: [DecimalPipe],
+  imports: [DecimalPipe, NgFor],
   templateUrl: './card-stacks.component.html',
   styleUrl: './card-stacks.component.css'
 })
