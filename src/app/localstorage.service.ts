@@ -5,6 +5,9 @@ import { Card } from './card.model';
 import swedishWords from './swedish-words.json';
 import swedishJobs from './swedish-jobs.json';
 import swedishVerbs from './swedish-verbs.json';
+import swedishEverydayObjects from './swedish-everyday-objects.json';
+import swedishExpressions from './swedish-expressions.json';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,27 +17,30 @@ export class LocalstorageService {
   swedishWords: Card[] = swedishWords;
   swedishVerbs: Card[] = swedishVerbs;
   swedishJobs: Card[] = swedishJobs;
+  swedishEverydayObjects: Card[] = swedishEverydayObjects;
+  swedishExpressions: Card[] = swedishExpressions;
 
 
   cardsList: CardsList[] = [
     {
-      name: 'Zweedse woorden 1',
+      name: 'Zweedse woorden',
       cardList: this.swedishWords
     },
     {
-      name: 'Zweedse werkwoorden',
+      name: 'Werkwoorden',
       cardList: this.swedishVerbs
     },
     {
-      name: 'Zweedse banen',
+      name: 'Banen',
       cardList: this.swedishJobs
     },
     {
-      name: 'Test',
-      cardList: [
-        { "sideA": "kaartje 1", "sideB": "zijn" },
-        { "sideA": "kaartje 2", "sideB": "zijn" }
-      ]
+      name: 'Alledaagse objecten',
+      cardList: this.swedishEverydayObjects
+    },
+    {
+      name: 'Alledaagse uitdrukkingen',
+      cardList: this.swedishExpressions
     }
   ];
 
