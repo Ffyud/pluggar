@@ -32,7 +32,6 @@
 .stack .amount {
   outline: none;
   border: none;
-  color: #000;
   cursor: pointer;
   text-decoration: none;
   padding: var(--spacing-xl);
@@ -64,11 +63,9 @@
 
 .stack.yes-stack .amount {
   background: var(--yes);
-  box-shadow: var(--box-shadow-button);
 
 }
 .stack.total-stack .amount {
   background: none;
-  box-shadow: inset 0px 0px 0px 2px #000;
 
 }

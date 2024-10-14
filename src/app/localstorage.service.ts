@@ -23,23 +23,23 @@ export class LocalstorageService {
 
   cardsList: CardsList[] = [
     {
-      name: 'Zweedse woorden',
+      name: '🇸🇪 Willekeurige woorden',
       cardList: this.swedishWords
     },
     {
-      name: 'Werkwoorden',
+      name: '🇸🇪 Werkwoorden',
       cardList: this.swedishVerbs
     },
     {
-      name: 'Banen',
+      name: '👷‍♀️ Banen',
       cardList: this.swedishJobs
     },
     {
-      name: 'Alledaagse objecten',
+      name: '☕ Alledaagse objecten',
       cardList: this.swedishEverydayObjects
     },
     {
-      name: 'Alledaagse uitdrukkingen',
+      name: '💬 Alledaagse uitdrukkingen',
       cardList: this.swedishExpressions
     }
   ];

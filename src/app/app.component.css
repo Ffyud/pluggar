@@ -32,7 +32,7 @@
     --spacing-xl: 15px;
     --radius: 4px;
     --radius-button: 18px;
-    --box-shadow-button: inset 0px 0px 0px 2px #00000057;
+    --box-shadow-button: inset 0px -1px 0px 2px #00000057;
     --yes: #45dd00;
     --maybe: #ffdb97;
     --no: #ffc3c3;
@@ -70,7 +70,9 @@ header.cardListHeader {
     font-weight: 600;
     color: #000;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    row-gap: var(--spacing-xl);
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr auto;
 }
 
 header.cardListHeader .percentage {
