@@ -29,6 +29,7 @@ button {
     border: none;
     font-size: inherit;
     font-weight: inherit;
+    text-decoration: none;
     padding: var(--spacing-xl);
     background: #EEE;
     border-radius: var(--radius-button);
