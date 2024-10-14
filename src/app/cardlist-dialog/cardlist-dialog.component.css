@@ -1,11 +1,10 @@
 
 dialog {
-    width: calc(100% - var(--spacing-xl) - var(--spacing-xl));
-    top: 60px;
+    width: 100%;
+    top: 0px;
     background: #FFF;
     border: none;
     z-index: 900;
-    border-radius: 24px;
     padding: 0px;
     overflow: hidden;
     box-shadow: inset 0px 0px 0px 2px #000, 0px 15px 50px -15px #000;
