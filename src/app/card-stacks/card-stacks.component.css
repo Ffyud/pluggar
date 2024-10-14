@@ -47,13 +47,7 @@
 .stack .return-button {
   font-weight: 600;
   text-decoration: none;
-  color: #000;
   background: #FFF;
-  border: none;
-  outline: none;
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-button);
-  box-shadow: var(--box-shadow-button);
 }
 
 .stack.no-stack .amount {

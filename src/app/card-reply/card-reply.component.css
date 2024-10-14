@@ -16,13 +16,6 @@ button {
     font-size: 1.3em;
     font-weight: 600;
     text-decoration: none;
-    cursor: pointer;
-    color: #000;
-    border: none;
-    outline: none;
-    padding: var(--spacing-xl);
-    border-radius: var(--radius-button);
-    box-shadow: var(--box-shadow-button);
 }
 
 button.no {
