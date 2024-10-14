@@ -64,8 +64,8 @@ main {
 
 header.cardListHeader {
     cursor: pointer;
-    box-shadow: inset 0px -2px 0px 0px #000;
     padding: var(--spacing-xl);
+    padding-bottom: 0px;
     font-size: 1.4em;
     font-weight: 600;
     color: #000;
@@ -75,9 +75,15 @@ header.cardListHeader {
     grid-template-columns: 1fr auto;
 }
 
+header.cardListHeader .select-list {
+    margin-right: var(--spacing-xl);
+}
+
 header.cardListHeader .percentage {
     padding-left: var(--spacing-xl);
     color: #329e00;
+    min-width: 60px;
+    text-align: right;
 }
 
 header.cardListHeader .menu {

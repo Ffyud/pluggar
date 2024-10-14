@@ -3,9 +3,11 @@
     <app-cardlist-dialog [isOpen]="isDialogOpen()" (listSelectEvent)="handleListSelect($event)" />
     <header class="cardListHeader" (click)="onHeaderClick()">
       <button class="select-list">
-        kies een lijst
+        kies lijst
       </button>
-      <span></span>
+      <button>
+        kant A 🇸🇪
+        </button>
       <span>
         @if (listName()) {
         {{listName()}}
