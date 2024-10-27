@@ -47,7 +47,7 @@
   position: absolute;
   backface-visibility: hidden;
   background: #F3F3F3;
-  border-radius: 4px;
+  border-radius: var(--radius);
   box-shadow: inset 0px 0px 0px 2px #515151;
 }
 
@@ -71,6 +71,13 @@
 .card p {
   margin: 0px;
   font-size: 2em;
+}
+
+.card span {
+  padding-left: var(--spacing-xl);
+  padding-right: var(--spacing-xl);
+  line-height: 100%;
+  display: inline-flex;
 }
 
 .card-done p {

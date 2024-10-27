@@ -7,11 +7,11 @@
       </button>
       <button>
         kant A 🇸🇪
-        </button>
+      </button>
       <span>
         @if (listName()) {
         {{listName()}}
-        } 
+        }
       </span>
       <span class="percentage">
         @if (cardList().length !== 0) {
@@ -19,8 +19,10 @@
         }
       </span>
     </header>
-    <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [cardsList]="cardList()"></app-card-stacks>
-    <app-card [replyIsNo]="replyIsNo()" [card]="currentCard" />
+    <div class="card-wrap">
+      <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [cardsList]="cardList()"></app-card-stacks>
+      <app-card [replyIsNo]="replyIsNo()" [card]="currentCard" />
+    </div>
     <app-card-reply (replyEvent)="handleReply($event)" />
   </div>
 </main>

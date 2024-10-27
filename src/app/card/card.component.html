@@ -4,10 +4,10 @@
     <button class="content" (click)="onClick()" [class.flipped]="!showSideA">
       <div class="card front" [class.maybe]="card()?.answer === Reply.MAYBE" [class.no]="card()?.answer === Reply.NO"
         [class.yes]="card()?.answer === Reply.YES">
-        <p>{{ card()?.sideA }}</p>
+        <p><span>{{ card()?.sideA }}</span></p>
       </div>
       <div class="card back" [class.replyIsNo]="answerNo">
-        <p>{{ card()?.sideB }}</p>
+        <p><span>{{ card()?.sideB }}</span></p>
       </div>
     </button>
     } @else {

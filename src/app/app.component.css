@@ -33,10 +33,15 @@
     --radius: 4px;
     --radius-button: 18px;
     --box-shadow-button: inset 0px -1px 0px 2px #00000057;
+    --box-shadow: inset 0px 0px 0px 2px #00000057;
+    --opaque-font-color: #0000009e;
     --yes: #45dd00;
     --maybe: #ffdb97;
     --no: #ffc3c3;
 
+    --yes-dark: #2e9200;
+    --maybe-dark: #a89164;
+    --no-dark: #a88181;
 }
 
 main {
@@ -54,7 +59,6 @@ main {
     max-width: 450px;
     height: 100vh;
     display: grid;
-    /* grid-template-rows: auto auto 1fr auto; */
     align-items: center;
 }
 
@@ -88,4 +92,13 @@ header.cardListHeader .percentage {
 
 header.cardListHeader .menu {
     padding-right: var(--spacing-xl);
+}
+
+.card-wrap {
+    border-radius: var(--radius);
+    padding-bottom: var(--spacing-xl);
+    margin-left: var(--spacing-xl);
+    margin-right: var(--spacing-xl);
+    background: #FFF;
+    box-shadow: 0px -8px 10px -5px #CCC, 0px 8px 10px -5px #CCC;
 }

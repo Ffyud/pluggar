@@ -60,35 +60,31 @@
   cursor: pointer;
   text-decoration: none;
   padding: var(--spacing-xl);
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
   width: 100%;
   text-align: center;
   font-weight: 600;
   font-size: 1.3em;
-  border-radius: var(--radius-button);
-}
-
-.stack .return-button {
-  font-weight: 600;
-  text-decoration: none;
-  background: #FFF;
+  border-radius: var(--radius);
+  color: var(--opaque-font-color);
+  box-shadow: var(--box-shadow);
+  background: none;
 }
 
 .stack.no-stack .amount {
-  background-color: var(--no);
-  box-shadow: var(--box-shadow-button);
+  background: var(--no);
 
 }
 
 .stack.maybe-stack .amount{
   background: var(--maybe);
-  box-shadow: var(--box-shadow-button);
 
 }
 
 .stack.yes-stack .amount {
   background: var(--yes);
-
 }
 .stack.total-stack .amount {
   background: none;
