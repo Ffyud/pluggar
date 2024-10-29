@@ -1,13 +1,14 @@
-
 dialog {
-    width: 100%;
-    top: 0px;
+    width: calc(100% - 30px);
+    margin: var(--spacing-xl);
+    border-radius: var(--radius);
+    top: 100px;
     background: #FFF;
     border: none;
     z-index: 900;
     padding: 0px;
     overflow: hidden;
-    box-shadow: inset 0px 0px 0px 2px #000, 0px 15px 50px -15px #000;
+    box-shadow: inset 0px 0px 0px 2px #000, 0px 15px 50px 10px #000;
 }
 
 dialog::backdrop {
@@ -19,9 +20,10 @@ dialog ul {
     padding: 0px;
     margin: 0px;
 }
+
 dialog ul li {
     cursor: pointer;
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-weight: 600;
     padding: var(--spacing-xl);
     box-shadow: inset 0px -2px 0px 0px #000;

@@ -1,8 +1,8 @@
 {
   "name": "pluggar",
   "short_name": "pluggar",
-  "theme_color": "#fafafa",
-  "background_color": "#FFF",
+  "theme_color": "#ffdb6e",
+  "background_color": "#ffdb6e",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

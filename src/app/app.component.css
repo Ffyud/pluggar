@@ -33,6 +33,7 @@
     --radius: 4px;
     --radius-button: 18px;
     --box-shadow-button: inset 0px -1px 0px 2px #00000057;
+    --box-shadow-reply-button: inset 0px -1px 0px 2px #00000057, 0px 0px 0px 4px #FFF; 
     --box-shadow: inset 0px 0px 0px 2px #00000057;
     --opaque-font-color: #0000009e;
     --yes: #45dd00;
@@ -67,10 +68,14 @@ main {
 }
 
 header.cardListHeader {
+    background: #FFF;
+    border-radius: var(--radius);
+    box-shadow: 0px 3px 0px 3px #000, 0px 0px 0px 3px #000;
     cursor: pointer;
     padding: var(--spacing-xl);
-    padding-bottom: 0px;
-    font-size: 1.4em;
+    margin-left: var(--spacing-xl);
+    margin-right: var(--spacing-xl);
+    font-size: 1.3em;
     font-weight: 600;
     color: #000;
     display: grid;
@@ -79,8 +84,10 @@ header.cardListHeader {
     grid-template-columns: 1fr auto;
 }
 
-header.cardListHeader .select-list {
+header.cardListHeader button.select-list {
     margin-right: var(--spacing-xl);
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 header.cardListHeader .percentage {
@@ -100,5 +107,5 @@ header.cardListHeader .menu {
     margin-left: var(--spacing-xl);
     margin-right: var(--spacing-xl);
     background: #FFF;
-    box-shadow: 0px -8px 10px -5px #CCC, 0px 8px 10px -5px #CCC;
+    box-shadow: 0px 3px 0px 3px #000, 0px 0px 0px 3px #000;
 }

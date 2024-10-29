@@ -16,6 +16,7 @@ button {
     font-size: 1.3em;
     font-weight: 600;
     text-decoration: none;
+    box-shadow: var(--box-shadow-reply-button);
 }
 
 button.no {
