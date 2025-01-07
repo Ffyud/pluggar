@@ -2,12 +2,13 @@ import { Injectable, signal } from '@angular/core';
 import { CardsList } from './cardslist.model';
 import { Card } from './card.model';
 
-import swedishWords from './swedish-words.json';
-import swedishJobs from './swedish-jobs.json';
-import swedishVerbs from './swedish-verbs.json';
-import swedishEverydayObjects from './swedish-everyday-objects.json';
-import swedishExpressions from './swedish-expressions.json';
-
+import swedishWords from './data/swedish-words.json';
+import swedishJobs from './data/swedish-jobs.json';
+import swedishVerbs from './data/swedish-verbs.json';
+import swedishEverydayObjects from './data/swedish-everyday-objects.json';
+import swedishExpressions from './data/swedish-expressions.json';
+import swedishTraffic from './data/swedish-traffic.json';
+import swedishEducation from './data/swedish-education.json';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class LocalstorageService {
   swedishJobs: Card[] = swedishJobs;
   swedishEverydayObjects: Card[] = swedishEverydayObjects;
   swedishExpressions: Card[] = swedishExpressions;
-
+  swedishTraffic: Card[] = swedishTraffic; 
+  swedishEducation: Card[] = swedishEducation;
 
   cardsList: CardsList[] = [
     {
@@ -41,6 +43,14 @@ export class LocalstorageService {
     {
       name: '💬 Alledaagse uitdrukkingen',
       cardList: this.swedishExpressions
+    },
+    {
+      name: '🚃 Verkeer',
+      cardList: this.swedishTraffic
+    },
+    {
+      name: '🧑‍🏫 Onderwijs',
+      cardList: this.swedishEducation
     }
   ];
 
