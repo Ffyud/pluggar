@@ -1,8 +1,8 @@
 <main class="main">
   <div class="content">
     <app-cardlist-dialog [isOpen]="isDialogOpen()" (listSelectEvent)="handleListSelect($event)" />
-    <header class="cardListHeader" (click)="onHeaderClick()">
-      <button class="select-list">
+    <header class="cardListHeader" >
+      <button class="select-list" (click)="onHeaderClick()">
         kies lijst
       </button>
       <button>

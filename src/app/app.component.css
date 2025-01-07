@@ -71,7 +71,6 @@ header.cardListHeader {
     background: #FFF;
     border-radius: var(--radius);
     box-shadow: 0px 3px 0px 3px #000, 0px 0px 0px 3px #000;
-    cursor: pointer;
     padding: var(--spacing-xl);
     margin-left: var(--spacing-xl);
     margin-right: var(--spacing-xl);
@@ -85,6 +84,7 @@ header.cardListHeader {
 }
 
 header.cardListHeader button.select-list {
+    cursor: pointer;
     margin-right: var(--spacing-xl);
     padding-top: 7px;
     padding-bottom: 7px;
