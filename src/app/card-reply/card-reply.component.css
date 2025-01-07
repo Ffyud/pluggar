@@ -2,7 +2,6 @@
     padding: var(--spacing-xl);
     display: flex;
     padding-top: var(--spacing-xl);
-    /* padding-bottom: env(safe-area-inset-bottom, 15px); */
     justify-content: space-between;
     align-items: center;
     gap: var(--spacing-xl);
@@ -24,43 +23,10 @@ button.no {
     background: var(--no);
 }
 
-/* button.no::before {
-    content: "\274C";
-    text-align: center;
-    display: block;
-    width: 100%;
-    font-size: 1.8em;
-    left: 0px;
-    height: 50px;
-    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
-} */
-
 button.maybe {
     background: var(--maybe);
 }
 
-/* button.maybe::before {
-    content: "\1f914";
-    text-align: center;
-    display: block;
-    width: 100%;
-    font-size: 1.8em;
-    left: 0px;
-    height: 50px;
-    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
-} */
-
 button.yes {
     background: var(--yes);
 }
-
-/* button.yes::before {
-    content: "\1F44D";
-    text-align: center;
-    display: block;
-    width: 100%;
-    font-size: 1.8em;
-    left: 0px;
-    height: 50px;
-    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
-} */
