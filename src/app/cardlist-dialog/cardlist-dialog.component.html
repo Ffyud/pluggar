@@ -1,9 +1,11 @@
 <dialog [open]="isOpen()">
-  <ul *ngFor="let list of cardsList()">
-    <li (click)="onListSelect(list.name)">
-      <span>{{list.name}}</span>
-      <span class="percentage"></span> 
-      <!-- TODO percentage in dialog ook toevoegen -->
-    </li>
-  </ul>
+  <div class="list-wrapper">
+    <ul *ngFor="let list of cardsList()">
+      <li (click)="onListSelect(list.name)">
+        <span>{{list.name}}</span>
+        <span class="percentage"></span>
+        <!-- TODO percentage in dialog ook toevoegen -->
+      </li>
+    </ul>
+  </div>
 </dialog>
