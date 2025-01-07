@@ -16,7 +16,7 @@ export class CardlistDialogComponent {
 
   @Output() listSelectEvent = new EventEmitter<string>();
 
-  private storageService = inject(LocalstorageService);
+  private readonly storageService = inject(LocalstorageService);
 
   listOfCardslist: CardsList[] = this.storageService.getListOfCardslist();
 
