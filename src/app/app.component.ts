@@ -19,7 +19,7 @@ import { DecimalPipe } from '@angular/common';
 export class AppComponent {
   title = 'Pluggar';
 
-  private storageService = inject(LocalstorageService);
+  private readonly storageService = inject(LocalstorageService);
 
   selectedWords: Card[] = this.storageService.getCards(this.storageService.getSelectedList());
   selectedListName = this.storageService.getSelectedList();
@@ -72,11 +72,7 @@ export class AppComponent {
             this.updateCurrentCard(this.currentCard(), reply)
           }
         }, 1000)
-      }, 1000);
-
-
-
-      
+      }, 1000);      
     } else {
       this.replyIsNo.update(() => { return false });
       this.updateCurrentCard(this.currentCard(), reply)
@@ -117,7 +113,6 @@ export class AppComponent {
         return false;
       }
       return true;
-
     });
   }
 

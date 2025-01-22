@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, inject, input, Output, signal } from '@angular/core';
+import { Component, EventEmitter, inject, input, Output, signal } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { LocalstorageService } from '../localstorage.service';
 import { CardsList } from '../cardslist.model';
