@@ -1,11 +1,17 @@
 <main class="main">
   <div class="content">
-    <button class="select-list" (click)="onHeaderClick()">
-      kies lijst
-    </button>
+    <header>
+      <div class="title">PLUGGAR</div>
+      <div>
+        <button class="select-list" (click)="onHeaderClick()">
+          kies lijst
+        </button>
+      </div>
+    </header>
     <app-cardlist-dialog [isOpen]="isDialogOpen()" (listSelectEvent)="handleListSelect($event)" />
     <div class="card-wrap">
-      <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [listTitle]="listTitle()" [cardsList]="cardList()"></app-card-stacks>
+      <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [listTitle]="listTitle()"
+        [cardsList]="cardList()"></app-card-stacks>
       <app-card [replyIsNo]="replyIsNo()" [card]="currentCard" />
     </div>
     <app-card-reply (replyEvent)="handleReply($event)" />

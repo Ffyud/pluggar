@@ -14,7 +14,7 @@ dialog {
     position: relative;
     margin: 0px auto;
     max-width: 500px;
-    border-radius: var(--radius);
+    border-radius: var(--heavy-radius);
     top: 10vh;
     height: 80vh;
     overflow-y: scroll;
@@ -25,14 +25,21 @@ dialog {
 dialog ul {
     list-style-type: none;
     padding: 0px;
-    margin: 0px;
+    margin: var(--spacing-xl);
+    display: grid;
+    gap: var(--spacing-xl);
+    grid-template-columns: 1fr 1fr;
 }
 
 dialog ul li {
     cursor: pointer;
-    font-size: 1.3em;
+    font-weight: 500;
+    aspect-ratio: 1;
+    font-size: var(--font-size-xl);
     padding: var(--spacing-xl);
-    box-shadow: inset 0px -2px 0px 0px #000;
+    background: var(--main-color);
+    box-shadow: inset 0px 0px 0px 2px #000;
+    border-radius: var(--heavy-radius);
     display: grid;
     grid-template-columns: 1fr auto;
 }

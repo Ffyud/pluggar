@@ -22,10 +22,17 @@ export class CardStacksComponent {
   amountMaybe = computed(() => this.cardsList().filter((card: Card) => (card.answer === Reply.MAYBE)).length);
   amountYes = computed(() => this.cardsList().filter((card: Card) => (card.answer === Reply.YES)).length);
 
-  Reply = Reply;
+  percentage(): number {
+    const amountYes = this.cardsList().filter((card: Card) => (card.answer === Reply.YES)).length;
+    const amountTotal = this.cardsList().length;
+    return (amountYes / amountTotal) * 100
+  }
 
   addBackToList(reply: Reply) {
     this.addBackToListEvent.emit(reply);
   }
+
+  Reply = Reply;
+
 
 }

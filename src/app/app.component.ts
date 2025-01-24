@@ -33,12 +33,6 @@ export class AppComponent {
     return cards[cards.length - 1];
   });
 
-  percentage(cardsList: Card[]): number {
-    const amountYes = cardsList.filter((card: Card) => (card.answer === Reply.YES)).length;
-    const amountTotal = cardsList.length;
-    return (amountYes / amountTotal) * 100
-  }
-
   addBackToListEvent(reply: Reply): void {
     console.log("Gegegeven antwoord verwijderd:", reply);
     const clearedCards: Card[] = this.cardList().map((card: Card) => {

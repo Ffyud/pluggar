@@ -20,6 +20,17 @@ main {
     margin-top: 1.75rem;
 }
 
+header {
+    display: grid;
+    margin: 0px var(--spacing-xl) 0px var(--spacing-xl);
+    grid-template-columns: 1fr auto;
+}
+
+header .title {
+    font-size: var(--font-size-xl);
+    font-weight: 300;
+}
+
 .card-wrap {
     overflow: hidden;
     border-radius: var(--heavy-radius);
