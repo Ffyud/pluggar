@@ -24,14 +24,24 @@ header {
     display: grid;
     margin: 0px var(--spacing-xl) 0px var(--spacing-xl);
     grid-template-columns: 1fr auto;
+    align-content: center;
+
 }
 
 header .title {
+    font-weight: 500;
     font-size: var(--font-size-xl);
-    font-weight: 300;
+}
+
+header button {
+    font-weight: 500;
+    font-size: var(--font-size-xl);
+    background: var(--main-color);
+    box-shadow: inset 0px 0px 0px 2px #000, 0px 1px 0px 0px #000;
 }
 
 .card-wrap {
+    align-self: end;
     overflow: hidden;
     border-radius: var(--heavy-radius);
     padding-bottom: var(--spacing-xl);

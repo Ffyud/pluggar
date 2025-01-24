@@ -28,13 +28,11 @@ dialog ul {
     margin: var(--spacing-xl);
     display: grid;
     gap: var(--spacing-xl);
-    grid-template-columns: 1fr 1fr;
 }
 
 dialog ul li {
     cursor: pointer;
     font-weight: 500;
-    aspect-ratio: 1;
     font-size: var(--font-size-xl);
     padding: var(--spacing-xl);
     background: var(--main-color);

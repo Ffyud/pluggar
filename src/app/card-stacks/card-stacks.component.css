@@ -10,7 +10,6 @@ h1 {
   padding-bottom: 0px;
   padding-right: 21px;
   font-size: var(--font-size-xl);
-  min-height: 70px;
   display: grid;
   gap: var(--spacing-xl);
   grid-template-columns: auto auto;
@@ -22,14 +21,12 @@ h1 {
   width: 60px;
   text-align: center;
   padding: var(--spacing-xl);
-  /* box-shadow: inset 0px 0px 0px 2px #000; */
-  /* border-radius: var(--radius); */
 }
 
 .card-on-stack {
   display: inline-block;
   border-radius: 5px;
-  margin-right: -10px;
+  margin-right: -22px;
   box-shadow: inset 0px 0px 0px 2px #515151, -2px -3px 0px 0px #FFF;
   width: 35px;
   height: 22px;
