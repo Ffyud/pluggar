@@ -1,26 +1,11 @@
 <main class="main">
   <div class="content">
+    <button class="select-list" (click)="onHeaderClick()">
+      kies lijst
+    </button>
     <app-cardlist-dialog [isOpen]="isDialogOpen()" (listSelectEvent)="handleListSelect($event)" />
-    <header class="cardListHeader" >
-      <button class="select-list" (click)="onHeaderClick()">
-        kies lijst
-      </button>
-      <button>
-        kant A 🇸🇪
-      </button>
-      <span>
-        @if (listName()) {
-        {{listName()}}
-        }
-      </span>
-      <span class="percentage">
-        @if (cardList().length !== 0) {
-        {{ percentage(cardList()) | number: '1.0-0'}}%
-        }
-      </span>
-    </header>
     <div class="card-wrap">
-      <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [cardsList]="cardList()"></app-card-stacks>
+      <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [listTitle]="listTitle()" [cardsList]="cardList()"></app-card-stacks>
       <app-card [replyIsNo]="replyIsNo()" [card]="currentCard" />
     </div>
     <app-card-reply (replyEvent)="handleReply($event)" />

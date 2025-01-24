@@ -13,10 +13,10 @@
 
 button {
     aspect-ratio: 1;
-    font-size: 1.3em;
+    font-size: var(--font-size-xl);
     font-weight: 600;
     text-decoration: none;
-    box-shadow: var(--box-shadow-reply-button);
+    box-shadow: inset 0px 0px 0px 2px #000, 0px 1px 0px 0px #000;
 }
 
 button.no {

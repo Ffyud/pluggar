@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { CardsList } from './cardslist.model';
 import { Card } from './card.model';
 
@@ -25,36 +25,34 @@ export class LocalstorageService {
 
   cardsList: CardsList[] = [
     {
-      name: '🇸🇪 Willekeurige woorden',
+      name: 'Willekeurige woorden',
       cardList: this.swedishWords
     },
     {
-      name: '🇸🇪 Werkwoorden',
+      name: 'Werkwoorden',
       cardList: this.swedishVerbs
     },
     {
-      name: '👷‍♀️ Banen',
+      name: 'Banen',
       cardList: this.swedishJobs
     },
     {
-      name: '☕ Alledaagse objecten',
+      name: 'Alledaagse objecten',
       cardList: this.swedishEverydayObjects
     },
     {
-      name: '💬 Alledaagse uitdrukkingen',
+      name: 'Alledaagse uitdrukkingen',
       cardList: this.swedishExpressions
     },
     {
-      name: '🚃 Verkeer',
+      name: 'Verkeer',
       cardList: this.swedishTraffic
     },
     {
-      name: '🧑‍🏫 Onderwijs',
+      name: 'Onderwijs',
       cardList: this.swedishEducation
     }
   ];
-
-  constructor() { }
 
   getListOfCardslist(): CardsList[] {
     return this.cardsList;

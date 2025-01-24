@@ -70,7 +70,7 @@
 
 .card p {
   margin: 0px;
-  font-size: 2em;
+  font-size: var(--font-size-xl);
 }
 
 .card span {

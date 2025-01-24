@@ -1,4 +1,4 @@
-import { Component, computed, signal, Signal, WritableSignal, inject } from '@angular/core';
+import { Component, computed, signal, Signal, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CardComponent } from "./card/card.component";
 import { CardReplyComponent } from "./card-reply/card-reply.component";
@@ -7,12 +7,11 @@ import { CardStacksComponent } from "./card-stacks/card-stacks.component";
 import { Reply } from './reply.enum';
 import { LocalstorageService } from './localstorage.service';
 import { CardlistDialogComponent } from "./cardlist-dialog/cardlist-dialog.component";
-import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DecimalPipe, CardComponent, CardReplyComponent, CardStacksComponent, CardlistDialogComponent],
+  imports: [RouterOutlet, CardComponent, CardReplyComponent, CardStacksComponent, CardlistDialogComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -21,15 +20,13 @@ export class AppComponent {
 
   private readonly storageService = inject(LocalstorageService);
 
-  selectedWords: Card[] = this.storageService.getCards(this.storageService.getSelectedList());
-  selectedListName = this.storageService.getSelectedList();
+  protected selectedWords: Card[] = this.storageService.getCards(this.storageService.getSelectedList());
+  protected selectedlistTitle = this.storageService.getSelectedList();
 
-  isDialogOpen = signal(false);
-
-  replyIsNo = signal(false);
-
-  listName = signal(this.selectedListName);
-  cardList = signal(this.selectedWords);
+  protected isDialogOpen = signal(false);
+  protected replyIsNo = signal(false);
+  protected listTitle = signal(this.selectedlistTitle);
+  protected cardList = signal(this.selectedWords);
 
   currentCard: Signal<Card> = computed(() => {
     const cards: Card[] = this.cardList().filter((card: Card) => (!card.answer));
@@ -44,7 +41,7 @@ export class AppComponent {
 
   addBackToListEvent(reply: Reply): void {
     console.log("Gegegeven antwoord verwijderd:", reply);
-    let clearedCards: Card[] = this.cardList().map((card: Card) => {
+    const clearedCards: Card[] = this.cardList().map((card: Card) => {
       if (card.answer === reply) {
         return { ...card, answer: undefined };
       }
@@ -55,7 +52,7 @@ export class AppComponent {
       return clearedCards
     });
 
-    this.storageService.saveCards(this.cardList(), this.listName());
+    this.storageService.saveCards(this.cardList(), this.listTitle());
   }
 
   handleReply(reply: Reply): void {
@@ -79,7 +76,7 @@ export class AppComponent {
     }
   }
 
-  updateCurrentCard(currentCard: Card, reply: Reply) {
+  private updateCurrentCard(currentCard: Card, reply: Reply) {
     if (currentCard) {
       currentCard.answer = reply;
 
@@ -89,12 +86,12 @@ export class AppComponent {
         this.cardList.set([...currentList, currentCard]);
       }
 
-      this.storageService.saveCards(this.cardList(), this.listName());
+      this.storageService.saveCards(this.cardList(), this.listTitle());
     }
   }
 
   handleListSelect(name: string): void {
-    this.listName.update(() => {
+    this.listTitle.update(() => {
       return name;
     })
 
