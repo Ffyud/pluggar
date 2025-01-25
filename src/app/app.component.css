@@ -15,8 +15,8 @@ main {
     max-height: 700px;
     align-self: center;
     display: grid;
-    align-items: center;
-    grid-template-rows: auto 1fr 1fr auto;
+    align-items: end;
+    grid-template-rows: 1fr 1fr auto;
 }
 
 .content h1 {
@@ -25,6 +25,7 @@ main {
 
 header {
     padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
     display: grid;
     margin: 0px var(--spacing-xl) 0px var(--spacing-xl);
     grid-template-columns: 1fr auto;
