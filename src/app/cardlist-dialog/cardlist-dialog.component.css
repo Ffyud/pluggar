@@ -14,7 +14,7 @@ dialog {
     position: relative;
     margin: 0px auto;
     max-width: 500px;
-    top: 10vh;
+    top: 0;
     height: 100vh;
     overflow-y: scroll;
 }
