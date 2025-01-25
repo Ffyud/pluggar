@@ -6,7 +6,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    --spacing-xl: 15px;
+    --spacing-xl: 14px;
+    --spacing-m: 7px;
     --radius: 4px;
     --heavy-radius: 10px;
     --box-shadow-button: inset 0px -1px 0px 2px #00000057;
@@ -24,10 +25,8 @@
     --maybe-dark: #a89164;
     --no-dark: #a88181;
 
-    --font-size-xl: 2em;
+    --font-size-xl: 1.7em;
 }
-
-
 
 html, body {
     height: 100%;

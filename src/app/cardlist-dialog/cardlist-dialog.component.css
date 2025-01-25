@@ -21,7 +21,7 @@ dialog {
 
 dialog ul {
     list-style-type: none;
-    padding: 0px;
+    padding: 0;
     margin: var(--spacing-xl);
     display: grid;
     gap: var(--spacing-xl);

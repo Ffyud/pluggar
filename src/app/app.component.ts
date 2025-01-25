@@ -63,7 +63,7 @@ export class AppComponent {
             this.updateCurrentCard(this.currentCard(), reply)
           }
         }, 1000)
-      }, 1000);      
+      }, 1000);
     } else {
       this.replyIsNo.update(() => { return false });
       this.updateCurrentCard(this.currentCard(), reply)

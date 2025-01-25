@@ -1,6 +1,6 @@
 .wrap {
   position: relative;
-  height: 200px;
+  height: 170px;
 }
 
 .card-container {
@@ -8,7 +8,7 @@
   margin-left: var(--spacing-xl);
   margin-right: var(--spacing-xl);
   width: calc(100% - 30px);
-  height: 200px;
+  height: 170px;
   perspective: 5000px;
   z-index: 100;
 }
@@ -28,7 +28,7 @@
 .card-done {
   text-align: center;
   height: 100%;
-  line-height: 200px;
+  line-height: 170px;
   background: #E6E6E6;
   box-shadow: 0px 0px 0px 2px #515151;
 
@@ -43,7 +43,7 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  line-height: 200px;
+  line-height: 170px;
   position: absolute;
   backface-visibility: hidden;
   background: #F3F3F3;

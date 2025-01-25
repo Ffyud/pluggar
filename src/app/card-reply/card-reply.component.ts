@@ -11,9 +11,20 @@ import { Reply } from '../reply.enum';
 export class CardReplyComponent {
 
   @Output() replyEvent = new EventEmitter<Reply>();
+  protected cooldown = false;
 
   onReply(reply: Reply): void {
+    if (reply === Reply.NO && this.cooldown) {
+      return;
+    }
     this.replyEvent.emit(reply);
+
+    if (reply === Reply.NO) {
+      this.cooldown = true;
+      setTimeout(() => {
+        this.cooldown = false;
+      }, 2000);
+    }
   }
 
   Reply = Reply;
