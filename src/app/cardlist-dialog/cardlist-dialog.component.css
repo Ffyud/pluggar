@@ -24,7 +24,6 @@ dialog ul {
     padding: 0;
     margin: var(--spacing-xl);
     display: grid;
-    gap: var(--spacing-xl);
 }
 
 dialog ul li {
@@ -32,8 +31,8 @@ dialog ul li {
     font-weight: 500;
     font-size: var(--font-size-xl);
     letter-spacing: -0.125rem;
-    padding: var(--spacing-xl);
-    background: var(--main-color);
+    padding:var(--spacing-xl);
+    background: #FFF;
     box-shadow: inset 0px -1px 0px 2px #000;
     border-radius: var(--heavy-radius);
     display: grid;
