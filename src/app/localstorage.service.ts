@@ -9,6 +9,10 @@ import swedishEverydayObjects from './data/swedish-everyday-objects.json';
 import swedishExpressions from './data/swedish-expressions.json';
 import swedishTraffic from './data/swedish-traffic.json';
 import swedishEducation from './data/swedish-education.json';
+import swedishFood from './data/swedish-food.json';
+import swedishPersonality from './data/swedish-personality.json';
+import swedishBody from './data/swedish-body.json';
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +26,9 @@ export class LocalstorageService {
   swedishExpressions: Card[] = swedishExpressions;
   swedishTraffic: Card[] = swedishTraffic; 
   swedishEducation: Card[] = swedishEducation;
+  swedishFood: Card[] = swedishFood;
+  swedishPersonality: Card[] = swedishPersonality;
+  swedishBody: Card[] = swedishBody;
 
   cardsList: CardsList[] = [
     {
@@ -51,6 +58,18 @@ export class LocalstorageService {
     {
       name: 'Onderwijs',
       cardList: this.swedishEducation
+    }, 
+    {
+      name: 'Voedsel',
+      cardList: this.swedishFood
+    },
+    {
+      name: 'Emoties en persoonlijkheid',
+      cardList: this.swedishPersonality
+    },
+    {
+      name: 'Lichaam en gezondheid',
+      cardList: this.swedishBody
     }
   ];
 
