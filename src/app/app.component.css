@@ -11,7 +11,7 @@ main {
 .content {
     width: 100%;
     max-width: 450px;
-    height: 100vh;
+    height: 100%;
     display: grid;
     align-items: center;
 }
