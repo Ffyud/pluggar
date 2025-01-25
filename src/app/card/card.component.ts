@@ -16,7 +16,7 @@ export class CardComponent {
 
   @Input() card!: Signal<Card | undefined>;
   @Input() set replyIsNo(value: boolean) {
-    this.showSideA = value;
+    this.showSideA = !value;
     this.answerNo = value
   }
 

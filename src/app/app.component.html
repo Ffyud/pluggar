@@ -1,19 +1,34 @@
 <main class="main">
   <div class="content">
     <header>
-      <div class="title">PLUGGAR</div>
       <div>
-        <button class="select-list" (click)="onHeaderClick()">
-          kies lijst
-        </button>
+        <div class="title">PLUGGAR</div>
+        <i class="subtitle">Zweedse woorden leren</i>
+
+      </div>
+      <div>
+        @if (cardList().length !== 0 ) {
+          <button class="select-list" (click)="onHeaderClick()">
+            kies lijst
+          </button>
+        }
       </div>
     </header>
     <app-cardlist-dialog [isOpen]="isDialogOpen()" (listSelectEvent)="handleListSelect($event)" />
-    <div class="card-wrap">
+      @if (cardList().length !== 0) {
+        <div class="card-wrap">
+
       <app-card-stacks (addBackToListEvent)="addBackToListEvent($event)" [listTitle]="listTitle()"
         [cardsList]="cardList()"></app-card-stacks>
       <app-card [replyIsNo]="replyIsNo()" [card]="currentCard" />
     </div>
+      } @else {
+        <div class="card-wrap-placeholder">kies een lijst om mee te starten.
+          <button class="select-list" (click)="onHeaderClick()">
+            kies lijst
+          </button>
+        </div>
+      }
     <app-card-reply (replyEvent)="handleReply($event)" />
   </div>
 </main>

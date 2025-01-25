@@ -25,7 +25,10 @@ export class CardStacksComponent {
   percentage(): number {
     const amountYes = this.cardsList().filter((card: Card) => (card.answer === Reply.YES)).length;
     const amountTotal = this.cardsList().length;
-    return (amountYes / amountTotal) * 100
+    if(amountYes === 0 || amountTotal === 0) {
+      return 0
+    }
+    return Math.round((amountYes / amountTotal) * 100);
   }
 
   addBackToList(reply: Reply) {

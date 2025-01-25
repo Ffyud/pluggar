@@ -25,18 +25,26 @@ header {
     margin: 0px var(--spacing-xl) 0px var(--spacing-xl);
     grid-template-columns: 1fr auto;
     align-content: center;
+    font-size: var(--font-size-xl);
+
 
 }
 
 header .title {
     font-weight: 500;
-    font-size: var(--font-size-xl);
+    letter-spacing: -0.125rem;
 }
 
-header button {
+header i.subtitle {
+    display: block;
+    color: #000;
+    font-size: .8em;
+    font-weight: 300;
+}
+
+button.select-list {
     font-weight: 500;
-    font-size: var(--font-size-xl);
-    background: var(--main-color);
+    background: #FFF;
     box-shadow: inset 0px 0px 0px 2px #000, 0px 1px 0px 0px #000;
 }
 
@@ -49,4 +57,12 @@ header button {
     margin-right: var(--spacing-xl);
     background: #FFF;
     box-shadow: 0px 1px 0px 3px #000, 0px 0px 0px 3px #000;
+}
+
+.card-wrap-placeholder {
+    height: 200px;
+    padding-top: 120px;
+    text-align: center;
+    padding: var(--spacing-xl);
+    font-size: var(--font-size-xl);
 }

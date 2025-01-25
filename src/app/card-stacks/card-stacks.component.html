@@ -2,11 +2,12 @@
     <h1>{{listTitle()}}</h1>
     <div class="stack total-stack">
         <div class="total-stack-count">
-            <span>{{amountWithoutAnswer()}}</span></div>
-        <div class="total-stack-cards">
-            <!-- <span class="card-on-stack"
-                *ngFor="let item of [].constructor(amountWithoutAnswer()); let i = index">
-            </span> -->
+            <span>{{amountWithoutAnswer()}} </span>
+            <i>kaarten</i>
+        </div>
+        <div class="total-stack-percentage">
+            <span>{{percentage()}}% </span>
+            <i>voltooid</i>
         </div>
     </div>
     <div class="stacks-answered">
