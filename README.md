@@ -1,4 +1,4 @@
 # Pluggar
 
-Pluggar is een flashcard app.
+Zweedse woorden oefenen met flashcards.
 
