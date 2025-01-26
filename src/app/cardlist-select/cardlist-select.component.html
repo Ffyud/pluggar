@@ -1,0 +1,13 @@
+<div class="list-wrapper">
+  <header>{{cardsList().length }} lijsten</header>
+  <ul>
+    @for (list of cardsList(); track list.name) {
+    <li>
+      <button (click)="onListSelect(list.name)" title="Selecteer lijst">
+        <span>{{list.name}}</span>
+        <span class="percentage">{{percentageAnsweredYes(list)}}%</span>
+      </button>
+    </li>
+    }
+  </ul>
+</div>

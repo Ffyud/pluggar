@@ -1,0 +1,54 @@
+
+.list-wrapper {
+    position: relative;
+    border-radius: var(--heavy-radius);
+    margin: var(--spacing-xl);
+    background: #FFF;
+    top: 0;
+    height: calc(100% - var(--spacing-xl) - var(--spacing-xl));
+    overflow-y: scroll;
+    box-shadow: var(--box-shadow-wrapper);
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    color: var(--dark-color);
+    background: #FFF;
+    font-weight: 400;
+    font-size: var(--font-size-l);
+    padding: var(--spacing-m) var(--spacing-xl);
+}
+
+ ul {
+    list-style-type: none;
+    padding: 0;
+    background: var(--main-color);
+    margin: 0;
+    display: grid;
+}
+
+ul li {
+    cursor: pointer;
+    font-weight: 400;
+    font-size: var(--font-size-l);
+    box-shadow: inset 0px -2px 0px 0px #000;
+}
+
+ul li button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    padding:var(--spacing-xl);
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    
+}
+
+.percentage {
+    color: #329e00;
+}
