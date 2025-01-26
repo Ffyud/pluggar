@@ -12,7 +12,7 @@ import swedishEducation from './data/swedish-education.json';
 import swedishFood from './data/swedish-food.json';
 import swedishPersonality from './data/swedish-personality.json';
 import swedishBody from './data/swedish-body.json';
-
+import { Reply } from './reply.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,7 @@ export class LocalstorageService {
   swedishJobs: Card[] = swedishJobs;
   swedishEverydayObjects: Card[] = swedishEverydayObjects;
   swedishExpressions: Card[] = swedishExpressions;
-  swedishTraffic: Card[] = swedishTraffic; 
+  swedishTraffic: Card[] = swedishTraffic;
   swedishEducation: Card[] = swedishEducation;
   swedishFood: Card[] = swedishFood;
   swedishPersonality: Card[] = swedishPersonality;
@@ -58,7 +58,7 @@ export class LocalstorageService {
     {
       name: 'Onderwijs',
       cardList: this.swedishEducation
-    }, 
+    },
     {
       name: 'Voedsel',
       cardList: this.swedishFood
@@ -77,21 +77,26 @@ export class LocalstorageService {
     return this.cardsList;
   }
 
+  getNumberOfCardsRepliedYes(listName: string): number {
+    const answeredCards: Card[] = this.getCards(listName).filter((card: Card) => card.answer === Reply.YES);
+    return answeredCards.length;
+  }
+
   getSelectedList(): string {
     const selectedList = localStorage.getItem('selectedList');
-    if(selectedList) {
+    if (selectedList) {
       return selectedList;
     }
     return '';
   }
 
   getCards(listName: string): Card[] {
-    if(listName !== '') {
+    if (listName !== '') {
       localStorage.setItem('selectedList', listName);
     }
 
     const cardsInLocalStorage = localStorage.getItem(listName);
-    if(cardsInLocalStorage) {
+    if (cardsInLocalStorage) {
       const cards: CardsList = JSON.parse(cardsInLocalStorage);
       return cards.cardList;
     }
