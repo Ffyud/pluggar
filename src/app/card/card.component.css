@@ -95,7 +95,7 @@
   content: "A";
   position: absolute;
   left: 0px;
-  font-size: 1.3em;
+  font-size: var(--font-size-l);
   top: 0px;
   background: #515151;
   color: #FFF;
@@ -113,7 +113,7 @@
   content: "B";
   position: absolute;
   left: 0px;
-  font-size: 1.3em;
+  font-size: var(--font-size-l);
   top: 0px;
   background: #515151;
   color: #FFF;

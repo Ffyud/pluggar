@@ -8,13 +8,16 @@
 
     --spacing-xl: 14px;
     --spacing-m: 7px;
-    --radius: 4px;
+    --radius: 5px;
     --heavy-radius: 10px;
     --box-shadow-button: inset 0px -1px 0px 2px #00000057;
-    --box-shadow-reply-button: 0px 1px 0px 3px #000, 0px 0px 0px 3px #000; 
+    --box-shadow-reply-button: 0px 1px 0px 3px #000, 0px 0px 0px 3px #000;
     --box-shadow: inset 0px 0px 0px 2px #00000057;
+    --box-shadow-wrapper: 0px 0px 0px 2px #000, 0px 2px 0px 2px #000;
 
     --main-color: #ffdb6e;
+    --main-color-darker: #ffd041;
+    --dark-color: #606060;
     --opaque-font-color: #0000009e;
 
     --yes: #27e200;
@@ -25,10 +28,13 @@
     --maybe-dark: #a89164;
     --no-dark: #a88181;
 
-    --font-size-xl: 1.7em;
+    --font-size-xl: 1.7rem;
+    --font-size-l: 1.1rem;
+    --font-size-m: .9rem;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     background: var(--main-color);
@@ -44,10 +50,8 @@ p {
 
 h1 {
     font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
+    font-weight:6500;
     line-height: 100%;
-    letter-spacing: -0.125rem;
     margin: 0;
     font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",

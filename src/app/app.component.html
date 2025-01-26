@@ -1,17 +1,6 @@
 <main class="main">
   <div class="content">
-    <app-cardlist-dialog [isOpen]="isDialogOpen()" (listSelectEvent)="handleListSelect($event)" />
-    <header>
-      <div>
-      </div>
-      <div>
-        @if (cardList().length !== 0 ) {
-        <button class="select-list" (click)="onHeaderClick()">
-          kies lijst
-        </button>
-        }
-      </div>
-    </header>
+    <app-cardlist-select (listSelectEvent)="handleListSelect($event)" />
     @if (cardList().length !== 0) {
     <div class="card-wrap">
 

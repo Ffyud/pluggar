@@ -6,12 +6,12 @@ import { Card } from './card.model';
 import { CardStacksComponent } from "./card-stacks/card-stacks.component";
 import { Reply } from './reply.enum';
 import { LocalstorageService } from './localstorage.service';
-import { CardlistDialogComponent } from "./cardlist-dialog/cardlist-dialog.component";
+import { CardlistSelectComponent } from "./cardlist-select/cardlist-select.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CardComponent, CardReplyComponent, CardStacksComponent, CardlistDialogComponent],
+  imports: [RouterOutlet, CardComponent, CardReplyComponent, CardStacksComponent, CardlistSelectComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

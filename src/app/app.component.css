@@ -12,11 +12,10 @@ main {
     width: 100%;
     height: 100%;
     max-width: 450px;
-    max-height: 700px;
+    max-height: 850px;
     align-self: center;
     display: grid;
-    align-items: end;
-    grid-template-rows: 1fr 1fr auto;
+    grid-template-rows: repeat(1, minmax(100px, 1fr));
 }
 
 .content h1 {
@@ -36,14 +35,14 @@ header {
 }
 
 header .title {
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -0.125rem;
 }
 
 header i.subtitle {
     display: block;
     color: #000;
-    font-size: .8em;
+    font-size: var(--font-size-m);
     font-weight: 300;
 }
 
@@ -62,7 +61,7 @@ button.select-list {
     margin-left: var(--spacing-xl);
     margin-right: var(--spacing-xl);
     background: #FFF;
-    box-shadow: 0px 1px 0px 3px #000, 0px 0px 0px 3px #000;
+    box-shadow: var(--box-shadow-wrapper);
 }
 
 .card-wrap-placeholder {

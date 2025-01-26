@@ -1,8 +1,9 @@
 h1 {
   display: block;
-  font-size: var(--font-size-xl);
   padding: var(--spacing-xl);
   background: var(--main-color);
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .total-stack {
@@ -17,9 +18,10 @@ h1 {
 
 .total-stack i {
   display: block;
-  color: #999;
-  font-size: .8em;
-  font-weight: 300;
+  color: var(--dark-color);
+  font-style: normal;
+  font-size: var(--font-size-l);
+  font-weight: 400;
 }
 
 .total-stack-count span {
