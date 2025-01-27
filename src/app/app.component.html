@@ -10,9 +10,6 @@
     </div>
     } @else {
     <div class="card-wrap-placeholder">kies een lijst om mee te starten.
-      <button class="select-list" (click)="onHeaderClick()">
-        kies lijst
-      </button>
     </div>
     }
     <app-card-reply (replyEvent)="handleReply($event)" />

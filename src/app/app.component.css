@@ -30,8 +30,6 @@ header {
     grid-template-columns: 1fr auto;
     align-content: center;
     font-size: var(--font-size-xl);
-
-
 }
 
 header .title {
@@ -65,9 +63,14 @@ button.select-list {
 }
 
 .card-wrap-placeholder {
-    height: 170px;
-    padding: var(--spacing-xl);
-    padding-top: 120px;
+    height: 250px;
+    display: grid;
+    align-content: center;
     text-align: center;
     font-size: var(--font-size-xl);
+    border-radius: var(--heavy-radius);
+    margin-left: var(--spacing-xl);
+    margin-right: var(--spacing-xl);
+    background: #FFF;
+    box-shadow: var(--box-shadow-wrapper);
 }
