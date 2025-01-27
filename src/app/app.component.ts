@@ -50,24 +50,29 @@ export class AppComponent {
   }
 
   handleReply(reply: Reply): void {
-    console.log('Antwoord gegeven op kaart:', this.currentCard().sideA, reply);
-    if (reply === Reply.NO) {
-      this.replyIsNo.update(() => { return true });
-      console.log('Antwoord is nee, laat andere kant zien.')
-
-      setTimeout(() => {
-        this.replyIsNo.update(() => { return false });
-
+    if(this.currentCard()) {
+      console.log('Antwoord gegeven op kaart:', this.currentCard().sideA, reply);
+      if (reply === Reply.NO) {
+        this.replyIsNo.update(() => { return true });
+        console.log('Antwoord is nee, laat andere kant zien.')
+  
         setTimeout(() => {
-          if(!this.replyIsNo()) {
-            this.updateCurrentCard(this.currentCard(), reply)
-          }
-        }, 1000)
-      }, 1000);
+          this.replyIsNo.update(() => { return false });
+  
+          setTimeout(() => {
+            if(!this.replyIsNo()) {
+              this.updateCurrentCard(this.currentCard(), reply)
+            }
+          }, 1000)
+        }, 1000);
+      } else {
+        this.replyIsNo.update(() => { return false });
+        this.updateCurrentCard(this.currentCard(), reply)
+      }
     } else {
-      this.replyIsNo.update(() => { return false });
-      this.updateCurrentCard(this.currentCard(), reply)
+      console.log('Geen kaarten over om te beantwoorden.')
     }
+
   }
 
   private updateCurrentCard(currentCard: Card, reply: Reply) {
