@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Output, signal } from '@angular/core';
+import { Component, computed, EventEmitter, inject, Output, signal } from '@angular/core';
 import { LocalstorageService } from '../localstorage.service';
 import { CardsList } from '../cardslist.model';
 
@@ -18,6 +18,10 @@ export class CardlistSelectComponent {
   listOfCardslist: CardsList[] = this.storageService.getListOfCardslist();
 
   protected cardsList = signal(this.listOfCardslist);
+
+  protected percentageTotalAnsweredYes = computed(() => {
+    return this.storageService.getTotalPercentageOfCardsRepliedYes();
+  })
 
   percentageAnsweredYes(cardsList: CardsList) {
     const amountAnsweredYes = this.storageService.getNumberOfCardsRepliedYes(cardsList.name);

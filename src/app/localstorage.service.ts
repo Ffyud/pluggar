@@ -77,10 +77,40 @@ export class LocalstorageService {
     return this.cardsList;
   }
 
+  private getNumberOfCards(listName: string): number {
+    return this.getCards(listName).length;
+  }
+
   getNumberOfCardsRepliedYes(listName: string): number {
     const answeredCards: Card[] = this.getCards(listName).filter((card: Card) => card.answer === Reply.YES);
     return answeredCards.length;
   }
+
+  getTotalPercentageOfCardsRepliedYes(): number {
+    const eachListTotalRepliedYes: number[] = this.getListOfCardslist().map((cardsList) => {
+      return this.getNumberOfCardsRepliedYes(cardsList.name)
+    })
+
+    const eachListTotal: number[] = this.getListOfCardslist().map((cardsList) => {
+      return this.getNumberOfCards(cardsList.name)
+    })
+    
+
+    const totalRepliedYes = eachListTotalRepliedYes.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue
+    },0);
+
+    const total = eachListTotal.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue
+    },0);
+
+    if (totalRepliedYes === 0 || total === 0) {
+      return 0
+    }
+    return Math.round((totalRepliedYes / total) * 100);
+  }
+
+
 
   getSelectedList(): string {
     const selectedList = localStorage.getItem('selectedList');

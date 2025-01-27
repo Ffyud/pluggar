@@ -17,7 +17,13 @@ header {
     background: #FFF;
     font-weight: 400;
     font-size: var(--font-size-l);
+    display: grid; 
+    grid-template-columns: 1fr auto;
     padding: var(--spacing-m) var(--spacing-xl);
+}
+
+span.total-percentage {
+    color: #329e00;
 }
 
  ul {
@@ -46,7 +52,6 @@ ul li button {
     display: grid;
     grid-template-columns: 1fr auto;
 
-    
 }
 
 .percentage {

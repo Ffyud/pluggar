@@ -1,5 +1,5 @@
 <div class="list-wrapper">
-  <header>{{cardsList().length }} lijsten</header>
+  <header><span>{{cardsList().length }} lijsten</span> <span class="total-percentage">{{percentageTotalAnsweredYes()}}%</span></header>
   <ul>
     @for (list of cardsList(); track list.name) {
     <li>
